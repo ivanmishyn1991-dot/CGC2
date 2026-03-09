@@ -74,8 +74,8 @@
         .logo{cursor:pointer;display:flex;align-items:center;justify-content:center}.logo img{height:80px;width:200px;display:block}
         nav{display:flex;gap:40px;align-items:center}
         nav a{color:var(--gray-8);text-decoration:none;font-weight:600;font-size:1.1rem;padding:8px 12px;border-radius:8px}
-        .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary)}
-        @media(max-width:860px){nav{display:none}.hamburger{display:block}}
+        .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary);width:60px;height:60px;position:absolute;left:12px;top:50%;transform:translateY(-50%)}
+        @media(max-width:860px){nav{display:none}.hamburger{display:flex;align-items:center;justify-content:center}}
         @media(min-width:861px){.header-inner{justify-content:center}}
         .hero-container{text-align:center;padding-bottom:40px}
         section{padding:80px 0 110px}
@@ -93,6 +93,8 @@
         .fa,.fas,.far,.fab,.fa-solid,.fa-regular,.fa-brands,[class^="fa-"]{display:inline-block;width:1em;height:1em;line-height:1;vertical-align:-0.125em}
         .btn-price i{width:16px;height:16px}
         @media(max-width:768px){.aeo-hero{min-height:520px}.aeo-hero h1{min-height:80px}.hero-lead{min-height:180px}.hero-points{min-height:100px}}
+        /* Disable reveal animation for above-the-fold content */
+        .aeo-hero.reveal,.aeo-hero.reveal.active,#about.reveal,#about.reveal.active{opacity:1!important;transform:none!important}
     </style>
 
     <!-- FontAwesome - Load after page render to prevent CLS -->
@@ -377,13 +379,13 @@
 
     {% block styles %}
         <!-- Non-blocking CSS: loads async, then applies as stylesheet -->
-        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309V" media="print" onload="this.media='all'">
-        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309V"></noscript>
+        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309W" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309W"></noscript>
     {% endblock %}
 
     <!-- Main page styles (non-blocking) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309V" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309V"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309W" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309W"></noscript>
 </head>
 <body>
 <!-- Toast Container -->

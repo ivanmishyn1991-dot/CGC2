@@ -141,6 +141,15 @@ nav a:hover, nav a.active {
     padding: 8px 10px;
     border-radius: 12px;
     transition: background 0.2s ease;
+    /* Fixed position to prevent CLS */
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+    justify-content: center;
 }
 
 .hamburger:hover { background: rgba(2,132,199,0.06); }
@@ -248,6 +257,12 @@ h2 {
 /* CLS-safe reveal animation - opacity only, no transform to prevent layout shifts */
 .reveal { opacity:0; transition: opacity 0.8s ease; }
 .reveal.active { opacity:1; }
+/* Disable reveal animation for above-the-fold sections to prevent CLS */
+.aeo-hero.reveal, .aeo-hero.reveal.active,
+#about.reveal, #about.reveal.active {
+    opacity: 1 !important;
+    transform: none !important;
+}
 
 .cta-row{
     display:flex;
@@ -1163,19 +1178,21 @@ body.quote-mode #quotePage .btn-sms:hover{
 
     /* вернуть гамбургер на мобилке */
     .hamburger{
-        display: inline-flex !important;
+        display: flex !important;
     }
 
-    /* MOBILE: burger слева, лого по центру, Call справа */
+    /* MOBILE: burger слева фиксированно, лого по центру */
     header .header-inner{
-        justify-content: space-between !important;
+        justify-content: center !important;
         gap: 0 !important;
+        position: relative;
     }
 
     .hamburger{
-        order: 1;
-        flex: 0 0 auto;
-        position: relative !important;
+        position: absolute !important;
+        left: 12px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
         z-index: 3000 !important;
         pointer-events: auto !important;
     }

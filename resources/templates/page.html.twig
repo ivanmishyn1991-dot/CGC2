@@ -48,9 +48,9 @@
         .logo{cursor:pointer;display:flex;align-items:center;justify-content:center}.logo img{height:80px;width:200px;display:block}
         nav{display:flex;gap:40px;align-items:center}
         nav a{color:var(--gray-8);text-decoration:none;font-weight:600}
-        .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary)}
+        .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary);width:60px;height:60px;position:absolute;left:12px;top:50%;transform:translateY(-50%)}
         /* Mobile critical styles */
-        @media(max-width:860px){nav{display:none}.hamburger{display:block}}
+        @media(max-width:860px){nav{display:none}.hamburger{display:flex;align-items:center;justify-content:center}}
     </style>
     
     <!-- FontAwesome - Deferred -->
@@ -81,11 +81,11 @@
     {% endblock %}
 
     <!-- Non-blocking CSS -->
-    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309V" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309V"></noscript>
+    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309W" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309W"></noscript>
     <!-- Modals styles (shared with main page) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309V" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309V"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309W" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309W"></noscript>
 </head>
 <body>
 
