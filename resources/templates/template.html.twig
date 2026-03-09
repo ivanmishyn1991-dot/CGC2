@@ -103,9 +103,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-    <!-- Preload critical images for LCP -->
-    <link rel="preload" href="/assets/images/logo.webp" as="image" type="image/webp" fetchpriority="high">
-
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -380,12 +377,9 @@
     </script>
 
     {% block styles %}
-        <!-- CSS loads normally for CLS stability -->
-        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309X">
+        <!-- Combined CSS for fewer requests -->
+        <link rel="stylesheet" href="/assets/css/combined.min.css?v=20250309Y">
     {% endblock %}
-
-    <!-- Main page styles -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309X">
 </head>
 <body>
 <!-- Toast Container -->
