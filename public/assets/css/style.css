@@ -45,26 +45,6 @@ body {
 }
 body.modal-open { overflow: hidden; }
 
-#bg-robots {
-    position: fixed;
-    inset: 0;
-    background-image: url('../images/background.jpg');
-    background-size: cover;
-    background-position: center 20%;
-    opacity: 0.14;
-    pointer-events: none;
-    z-index: -2;
-    filter: blur(14px) brightness(1.08) saturate(0.75);
-}
-
-@media (max-width: 768px) {
-    #bg-robots {
-        background-position: center 10%;
-        opacity: 0.11;
-        filter: blur(18px) brightness(1.05) saturate(0.7);
-    }
-}
-
 h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.25; }
 .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
 
@@ -114,6 +94,12 @@ header {
 
 .logo:hover {
     transform: translateY(-3px);
+}
+
+.logo img {
+    display: block;
+    width: 200px;
+    height: 80px;
 }
 
 nav { display: flex; gap: 40px; align-items: center; min-height: 48px; }

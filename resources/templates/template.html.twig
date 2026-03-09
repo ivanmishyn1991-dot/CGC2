@@ -377,19 +377,17 @@
 
     {% block styles %}
         <!-- Non-blocking CSS: loads async, then applies as stylesheet -->
-        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309M" media="print" onload="this.media='all'">
-        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309M"></noscript>
+        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309N" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309N"></noscript>
     {% endblock %}
 
     <!-- Main page styles (non-blocking) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309M" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309M"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309N" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309N"></noscript>
 </head>
 <body>
 <!-- Toast Container -->
 <div class="toast-container" id="toastContainer"></div>
-
-<div id="bg-robots"></div>
 
 {% include 'landing/components/header.html.twig' %}
 
