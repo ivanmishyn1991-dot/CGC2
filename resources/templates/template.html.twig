@@ -86,10 +86,6 @@
         .btn-primary{background:linear-gradient(90deg,var(--primary),var(--primary-l));color:#fff;border:none;padding:18px 56px;font-size:1.15rem;font-weight:800;border-radius:999px;cursor:pointer;box-shadow:0 10px 24px rgba(2,132,199,.28);text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
         .trust-bar{max-width:980px;margin:26px auto 0;background:rgba(255,255,255,.88);border:1px solid rgba(2,132,199,.18);border-radius:999px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:center}
         .trust-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:#fff;border:1px solid rgba(56,189,248,.55);border-radius:999px;font-weight:700;color:var(--gray-8);font-size:.98rem;white-space:nowrap}
-        .cgc-robot-wrap{position:fixed;right:0;bottom:0;z-index:2600;pointer-events:none}
-        .cgc-robot-btn{pointer-events:auto;border:0;background:0 0;padding:0;cursor:pointer;width:240px;height:240px;position:relative}
-        .cgc-robot-img{width:100%;height:100%;object-fit:contain;display:block}
-        @media(max-width:860px){.cgc-robot-btn{width:clamp(170px,34vw,220px);height:clamp(170px,34vw,220px)}}
         /* CLS Prevention: Reserve space for fonts */
         .aeo-hero{min-height:480px}
         .aeo-hero h1{min-height:1.2em}
@@ -384,13 +380,13 @@
 
     {% block styles %}
         <!-- Non-blocking CSS: loads async, then applies as stylesheet -->
-        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309k" media="print" onload="this.media='all'">
-        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309k"></noscript>
+        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309L" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309L"></noscript>
     {% endblock %}
 
     <!-- Main page styles (non-blocking) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309k" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309k"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309L" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309L"></noscript>
 </head>
 <body>
 <!-- Toast Container -->
@@ -447,41 +443,6 @@
 
 {% block modals %}{% endblock %}
 
-
-<!-- CGC Robot (inserted into main file) -->
-<div class="cgc-robot-wrap" id="cgcRobotWrap" aria-label="CGC Robot contact widget">
-    <div class="cgc-social-panel" aria-label="Quick contacts">
-        <a class="cgc-social-item fb" href="https://www.facebook.com/profile.php?id=61587613647830" target="_blank" rel="noopener" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-        </a>
-
-        <a class="cgc-social-item ig" href="https://www.instagram.com/cgcservices.ca/" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-
-        <a class="cgc-social-item wa" href="https://wa.me/16725006060" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <a class="cgc-social-item tg" href="https://t.me/CGC_services" target="_blank" rel="noopener" aria-label="Telegram">
-            <i class="fa-brands fa-telegram"></i>
-        </a>
-    </div>
-
-    <button class="cgc-robot-btn" id="cgcRobotBtn" type="button" aria-expanded="false" aria-label="Open contacts">
-        <img
-                class="cgc-robot-img"
-                src="/assets/images/social-robot.webp"
-                alt="CGC Robot"
-                width="200"
-                height="300"
-                fetchpriority="low"
-                decoding="async"
-        />
-        <div class="cgc-robot-bubble" id="cgcRobotBubble">Tap me</div>
-    </button>
-    <button class="cgc-robot-hit" id="cgcRobotHit" type="button" aria-label="Open contacts"></button>
-</div>
 
 <!-- Quick Quote Modal (MUST be before scripts) -->
 <div class="quick-quote-overlay" id="quickQuoteOverlay">

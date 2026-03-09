@@ -54,14 +54,9 @@
         /* Mobile critical styles */
         @media(max-width:860px){
             header .btn-email{display:none}
-            .cgc-robot-wrap .social-icons{opacity:0;pointer-events:none}
         }
         @media(max-width:860px){nav{display:none}.hamburger{display:block}}
         @media(min-width:861px){header .btn-email{position:fixed;top:calc(var(--headerH)/2);transform:translateY(-50%);min-width:260px;height:58px;z-index:1001;background:linear-gradient(90deg,var(--primary),var(--primary-l));color:#fff;left:20px}}
-        .cgc-robot-wrap{position:fixed;right:0;bottom:0;z-index:2600;pointer-events:none}
-        .cgc-robot-btn{pointer-events:auto;border:0;background:0 0;padding:0;cursor:pointer;width:240px;height:240px}
-        .cgc-robot-img{width:100%;height:100%;object-fit:contain}
-        @media(max-width:860px){.cgc-robot-btn{width:clamp(170px,34vw,220px);height:clamp(170px,34vw,220px)}}
     </style>
     
     <!-- FontAwesome - Deferred -->
@@ -92,11 +87,11 @@
     {% endblock %}
 
     <!-- Non-blocking CSS -->
-    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309k" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309k"></noscript>
+    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309L" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309L"></noscript>
     <!-- Modals styles (shared with main page) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309k" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309k"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309L" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309L"></noscript>
 </head>
 <body>
 <div id="bg-robots"></div>
@@ -226,41 +221,6 @@
     </div>
 </div>
 
-
-<!-- CGC Robot (inserted into main file) -->
-<div class="cgc-robot-wrap" id="cgcRobotWrap" aria-label="CGC Robot contact widget">
-    <div class="cgc-social-panel" aria-label="Quick contacts">
-        <a class="cgc-social-item fb" href="https://www.facebook.com/profile.php?id=61587613647830" target="_blank" rel="noopener" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-        </a>
-
-        <a class="cgc-social-item ig" href="https://www.instagram.com/cgcservices.ca/" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-
-        <a class="cgc-social-item wa" href="https://wa.me/16725006060" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <a class="cgc-social-item tg" href="https://t.me/CGC_services" target="_blank" rel="noopener" aria-label="Telegram">
-            <i class="fa-brands fa-telegram"></i>
-        </a>
-    </div>
-
-    <button class="cgc-robot-btn" id="cgcRobotBtn" type="button" aria-expanded="false" aria-label="Open contacts">
-        <img
-                class="cgc-robot-img"
-                src="/assets/images/social-robot.webp"
-                alt="CGC Robot"
-                width="200"
-                height="300"
-                fetchpriority="low"
-                decoding="async"
-        />
-        <div class="cgc-robot-bubble" id="cgcRobotBubble">Tap me</div>
-    </button>
-    <button class="cgc-robot-hit" id="cgcRobotHit" type="button" aria-label="Open contacts"></button>
-</div>
 
 <!-- Photo Lightbox -->
 <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">

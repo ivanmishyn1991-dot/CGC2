@@ -555,43 +555,6 @@ if (photosInput){
     });
 }
 
-/* ===== CGC Robot widget logic (inserted) ===== */
-/* ===== CGC Robot widget logic (tap target is small hit button on mobile) ===== */
-(function(){
-    const wrap = document.getElementById('cgcRobotWrap');
-    const btn  = document.getElementById('cgcRobotBtn');
-    const hit  = document.getElementById('cgcRobotHit');
-    const bubble = document.getElementById('cgcRobotBubble');
-
-    if (!wrap || !btn || !bubble) return;
-
-    const toggle = (e) => {
-        e.stopPropagation();
-        const isOpen = wrap.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    };
-
-    // на мобилке кликаем по маленькой зоне, на пк можно по самому роботу
-    if (hit) hit.addEventListener('click', toggle);
-    btn.addEventListener('click', toggle);
-
-    document.addEventListener('click', (e) => {
-        if (!wrap.classList.contains('is-open')) return;
-        if (wrap.contains(e.target)) return;
-        wrap.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-    });
-
-    function showBubble(){
-        if (wrap.classList.contains('is-open')) return;
-        bubble.classList.add('is-visible');
-        setTimeout(() => bubble.classList.remove('is-visible'), 2500);
-    }
-
-    setTimeout(showBubble, 3000);
-    setInterval(showBubble, 10000);
-})();
-
 
 /* ========================================
    PHOTO UPLOAD FUNCTIONALITY
