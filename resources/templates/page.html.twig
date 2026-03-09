@@ -43,14 +43,16 @@
         body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg-light);color:var(--gray-8);line-height:1.65;overflow-x:hidden}
         .container{max-width:1180px;margin:0 auto;padding:0 20px}
         h1,h2,h3{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.25;font-weight:800}
-        header{position:sticky;top:0;z-index:1000;height:var(--headerH);background:#fff;box-shadow:0 6px 20px rgba(2,132,199,.12)}
-        .header-inner{display:flex;align-items:center;justify-content:center;height:var(--headerH);gap:16px}
-        .logo{cursor:pointer;display:flex;align-items:center;justify-content:center}.logo img{height:80px;width:200px;display:block}
+        header{position:sticky;top:0;z-index:1000;height:var(--headerH);min-height:var(--headerH);background:#fff;box-shadow:0 6px 20px rgba(2,132,199,.12)}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--headerH);min-height:var(--headerH);gap:16px;position:relative}
+        .logo{flex:0 0 200px;width:200px;min-width:200px;height:80px;display:flex;align-items:center;cursor:pointer}
+        .logo a,.logo img{display:block}
+        .logo img{width:200px;height:80px}
         nav{display:flex;gap:40px;align-items:center}
         nav a{color:var(--gray-8);text-decoration:none;font-weight:600}
-        .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary);width:60px;height:60px;position:absolute;left:12px;top:50%;transform:translateY(-50%)}
-        /* Mobile critical styles */
-        @media(max-width:860px){nav{display:none}.hamburger{display:flex;align-items:center;justify-content:center}}
+        .hamburger{display:none;flex:0 0 60px;width:60px;min-width:60px;height:60px;min-height:60px;align-items:center;justify-content:center;font-size:2rem;line-height:1;background:0 0;border:none;cursor:pointer;color:var(--primary);padding:0;margin:0}
+        @media(max-width:860px){nav{display:none}.hamburger{display:inline-flex}}
+        @media(min-width:861px){.header-inner{justify-content:center}}
     </style>
     
     <!-- FontAwesome - Deferred -->
@@ -80,12 +82,9 @@
     </script>
     {% endblock %}
 
-    <!-- Non-blocking CSS -->
-    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309W" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309W"></noscript>
-    <!-- Modals styles (shared with main page) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309W" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309W"></noscript>
+    <!-- CSS loads normally for CLS stability -->
+    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309X">
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309X">
 </head>
 <body>
 
