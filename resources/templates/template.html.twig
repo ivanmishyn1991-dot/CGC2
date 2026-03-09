@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 
-    <!-- Critical inline styles to prevent layout shift (no visibility:hidden) -->
-    <style>
-        :root{--headerH:96px;--primary:#0284c7}
-        header{position:sticky;top:0;z-index:1000;height:var(--headerH);background:#fff}
-    </style>
     <script>
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
         window.scrollTo(0, 0);
@@ -364,7 +359,7 @@
 
     {% block styles %}
         <!-- Combined CSS for fewer requests -->
-        <link rel="stylesheet" href="/assets/css/combined.min.css?v=20250309Z">
+        <link rel="stylesheet" href="/assets/css/combined.min.css?v=20250310A">
     {% endblock %}
 </head>
 <body>
