@@ -18,7 +18,7 @@
 }
 .aeo-hero h1 {
     margin: 0 0 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Poppins Fallback', sans-serif;
     font-size: clamp(2rem, 4vw, 3.5rem);
     line-height: 1.08;
     background: linear-gradient(90deg, var(--primary), var(--accent));

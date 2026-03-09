@@ -48,7 +48,7 @@ body {
 
 body.modal-open{ overflow: hidden; }
 
-h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.25; }
+h1, h2, h3 { font-family: 'Poppins', 'Poppins Fallback', sans-serif; line-height: 1.25; }
 .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
 
 header {
