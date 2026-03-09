@@ -113,18 +113,6 @@ nav a {
 }
 nav a:hover, nav a.active { color: var(--primary); }
 
-.btn-email {
-    font-weight: 900;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: all 0.25s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    line-height: 1.1;
-}
-
 @keyframes headerGlow {
     0%, 100% {
         box-shadow:
@@ -218,51 +206,10 @@ nav a:hover, nav a.active { color: var(--primary); }
 
 @media (min-width: 861px){
     .header-inner{ justify-content: center; }
-    header .container.header-inner{
-        padding-left: 300px;
-        padding-right: 300px;
-    }
-
-    header .btn-email{
-        position: fixed;
-        top: calc(var(--headerH) / 2);
-        transform: translateY(-50%);
-        min-width: 260px;
-        height: 58px;
-        padding: 10px 18px;
-        border-radius: 999px;
-        animation: headerGlow 2.6s infinite ease-in-out;
-        z-index: 1001;
-    }
-
-    header .btn-email{
-        left: 20px;
-        background: linear-gradient(90deg, var(--primary), var(--primary-l));
-        color: white;
-        border: none;
-        box-shadow: 0 10px 24px rgba(2,132,199,0.24);
-        font-size: 1.02rem;
-        font-weight: 900;
-    }
-    header .btn-email:hover{
-        background: linear-gradient(90deg, var(--primary-d), var(--primary));
-        box-shadow: 0 16px 34px rgba(2,132,199,0.30);
-    }
-
-    header .btn-email .btn-main{
-        font-size: 1.02rem;
-        font-weight: 900;
-        letter-spacing: 0.1px;
-    }
-
-    header .logo{
-        margin-right: 200px;
-    }
 }
 
 /* MOBILE-ONLY CHANGES */
 @media (max-width: 860px){
-    #headerEmailBtn{ display: none !important; }
     .hamburger{ display: inline-flex !important; }
 
     header .header-inner{

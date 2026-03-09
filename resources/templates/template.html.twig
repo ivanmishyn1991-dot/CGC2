@@ -8,8 +8,6 @@
     <style>
         :root{--headerH:96px;--primary:#0284c7}
         header{position:sticky;top:0;z-index:1000;height:var(--headerH);background:#fff}
-        header .btn-email{position:fixed;border-radius:999px;z-index:1001}
-        @media(max-width:860px){header .btn-email{display:none}}
     </style>
     <script>
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -76,10 +74,9 @@
         .logo{cursor:pointer}.logo img{height:80px;width:auto}
         nav{display:flex;gap:40px;align-items:center}
         nav a{color:var(--gray-8);text-decoration:none;font-weight:600;font-size:1.1rem;padding:8px 12px;border-radius:8px}
-        .btn-email{font-weight:900;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
         .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary)}
         @media(max-width:860px){nav{display:none}.hamburger{display:block}}
-        @media(min-width:861px){.header-inner{justify-content:center}header .btn-email{position:fixed;top:calc(var(--headerH)/2);transform:translateY(-50%);min-width:260px;height:58px;z-index:1001;left:20px;background:linear-gradient(90deg,var(--primary),var(--primary-l));color:#fff}}
+        @media(min-width:861px){.header-inner{justify-content:center}}
         .hero-container{text-align:center;padding-bottom:40px}
         section{padding:80px 0 110px}
         h2{font-size:clamp(2.2rem,7vw,4rem);text-align:center;margin-bottom:1.3em;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -380,13 +377,13 @@
 
     {% block styles %}
         <!-- Non-blocking CSS: loads async, then applies as stylesheet -->
-        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309L" media="print" onload="this.media='all'">
-        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309L"></noscript>
+        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309M" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309M"></noscript>
     {% endblock %}
 
     <!-- Main page styles (non-blocking) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309L" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309L"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309M" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309M"></noscript>
 </head>
 <body>
 <!-- Toast Container -->

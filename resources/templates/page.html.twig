@@ -11,7 +11,6 @@
     <style>
         :root{--headerH:96px;--primary:#0284c7}
         header{position:sticky;top:0;z-index:1000;height:var(--headerH);background:#fff}
-        @media(max-width:860px){header .btn-email{display:none}}
     </style>
     <script>if('scrollRestoration' in history)history.scrollRestoration='manual';window.scrollTo(0,0);</script>
     
@@ -49,14 +48,9 @@
         .logo{cursor:pointer}.logo img{height:80px;width:auto}
         nav{display:flex;gap:40px;align-items:center}
         nav a{color:var(--gray-8);text-decoration:none;font-weight:600}
-        .btn-email{font-weight:900;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
         .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary)}
         /* Mobile critical styles */
-        @media(max-width:860px){
-            header .btn-email{display:none}
-        }
         @media(max-width:860px){nav{display:none}.hamburger{display:block}}
-        @media(min-width:861px){header .btn-email{position:fixed;top:calc(var(--headerH)/2);transform:translateY(-50%);min-width:260px;height:58px;z-index:1001;background:linear-gradient(90deg,var(--primary),var(--primary-l));color:#fff;left:20px}}
     </style>
     
     <!-- FontAwesome - Deferred -->
@@ -87,11 +81,11 @@
     {% endblock %}
 
     <!-- Non-blocking CSS -->
-    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309L" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309L"></noscript>
+    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309M" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309M"></noscript>
     <!-- Modals styles (shared with main page) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309L" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309L"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309M" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309M"></noscript>
 </head>
 <body>
 <div id="bg-robots"></div>
