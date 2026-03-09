@@ -70,8 +70,8 @@
         .container{max-width:1180px;margin:0 auto;padding:0 20px}
         h1,h2,h3{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.25;font-weight:800}
         header{position:sticky;top:0;z-index:1000;height:var(--headerH);background:#fff;box-shadow:0 6px 20px rgba(2,132,199,.12)}
-        .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--headerH);gap:16px;position:relative}
-        .logo{cursor:pointer}.logo img{height:80px;width:auto}
+        .header-inner{display:flex;align-items:center;justify-content:center;height:var(--headerH);gap:16px;position:relative}
+        .logo{cursor:pointer;display:flex;align-items:center;justify-content:center}.logo img{height:80px;width:200px;display:block}
         nav{display:flex;gap:40px;align-items:center}
         nav a{color:var(--gray-8);text-decoration:none;font-weight:600;font-size:1.1rem;padding:8px 12px;border-radius:8px}
         .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary)}
@@ -377,13 +377,13 @@
 
     {% block styles %}
         <!-- Non-blocking CSS: loads async, then applies as stylesheet -->
-        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309U" media="print" onload="this.media='all'">
-        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309U"></noscript>
+        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309V" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309V"></noscript>
     {% endblock %}
 
     <!-- Main page styles (non-blocking) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309U" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309U"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309V" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309V"></noscript>
 </head>
 <body>
 <!-- Toast Container -->
