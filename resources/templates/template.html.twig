@@ -56,6 +56,8 @@
 
     <!-- Critical CSS with @font-face -->
     <style>
+        @font-face{font-family:'Font Awesome 6 Free';font-style:normal;font-weight:900;font-display:swap;src:url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2') format('woff2')}
+        @font-face{font-family:'Font Awesome 6 Brands';font-style:normal;font-weight:400;font-display:swap;src:url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2') format('woff2')}
         @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:optional;src:url('/assets/fonts/inter-400.woff2') format('woff2')}
         @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:optional;src:url('/assets/fonts/inter-500.woff2') format('woff2')}
         @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:optional;src:url('/assets/fonts/inter-600.woff2') format('woff2')}
@@ -377,13 +379,13 @@
 
     {% block styles %}
         <!-- Non-blocking CSS: loads async, then applies as stylesheet -->
-        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309Q" media="print" onload="this.media='all'">
-        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309Q"></noscript>
+        <link rel="stylesheet" href="/assets/css/style.min.css?v=20250309R" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=20250309R"></noscript>
     {% endblock %}
 
     <!-- Main page styles (non-blocking) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309Q" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309Q"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309R" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309R"></noscript>
 </head>
 <body>
 <!-- Toast Container -->
