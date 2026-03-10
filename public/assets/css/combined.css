@@ -594,7 +594,7 @@ h2 {
     border: 2px solid rgba(56, 189, 248, 0.4);
     transition: transform 0.38s ease, border-color 0.38s ease;
     text-decoration: none;
-    color: inherit;
+    color: var(--primary);
     display: block;
     will-change: transform;
 }
@@ -602,6 +602,7 @@ h2 {
 .city:hover {
     transform: translateY(-4px);
     border-color: #38BDF8;
+    color: var(--primary-d);
 }
 
 footer {
