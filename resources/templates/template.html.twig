@@ -512,15 +512,19 @@
 </div>
 
 {% block scripts %}
-    <script src="/assets/js/app.min.js?rand={{ random() }}"></script>
-    
-    <!-- Fallback: Burger menu + Cities Modal (in case main JS fails) -->
+    <!-- Fallback: Burger menu + Cities Modal (runs first, before main JS) -->
     <script>
-    document.addEventListener('DOMContentLoaded', function(){
-        // Burger menu
-        var nav = document.getElementById('main-nav');
-        var burger = document.querySelector('.hamburger');
-        if (burger && nav) {
+    (function(){
+        function initBurger() {
+            var nav = document.getElementById('main-nav');
+            var burger = document.querySelector('.hamburger');
+            if (!burger || !nav) return;
+            
+            // Remove existing listeners to avoid duplicates
+            var newBurger = burger.cloneNode(true);
+            burger.parentNode.replaceChild(newBurger, burger);
+            burger = newBurger;
+            
             burger.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -528,12 +532,14 @@
                 nav.classList.toggle('open', !isOpen);
                 burger.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
             });
+            
             nav.querySelectorAll('a').forEach(function(a) {
                 a.addEventListener('click', function() {
                     nav.classList.remove('open');
                     burger.setAttribute('aria-expanded', 'false');
                 });
             });
+            
             document.addEventListener('click', function(e) {
                 if (!nav.classList.contains('open')) return;
                 if (!nav.contains(e.target) && !burger.contains(e.target)) {
@@ -543,22 +549,27 @@
             });
         }
         
-        // Cities modal
-        var modal = document.getElementById('citiesModal');
-        var trigger = document.getElementById('headerAreasTrigger');
-        if (modal && trigger) {
+        function initCitiesModal() {
+            var modal = document.getElementById('citiesModal');
+            var trigger = document.getElementById('headerAreasTrigger');
+            if (!modal || !trigger) return;
+            
             trigger.addEventListener('click', function(e) {
                 e.preventDefault();
                 modal.classList.add('open');
                 modal.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
             });
+            
             var closeBtn = modal.querySelector('.modal-close');
-            if (closeBtn) closeBtn.addEventListener('click', function() {
-                modal.classList.remove('open');
-                modal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            });
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    modal.classList.remove('open');
+                    modal.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            }
+            
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
                     modal.classList.remove('open');
@@ -567,8 +578,21 @@
                 }
             });
         }
-    });
+        
+        // Run when DOM ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                initBurger();
+                initCitiesModal();
+            });
+        } else {
+            initBurger();
+            initCitiesModal();
+        }
+    })();
     </script>
+    
+    <script src="/assets/js/app.min.js?rand={{ random() }}"></script>
     
     <!-- Deferred Facebook Pixel - loads after page is ready -->
     <script>
