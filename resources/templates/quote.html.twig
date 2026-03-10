@@ -25,6 +25,62 @@
         margin-bottom: 16px;
     }
 }
+
+/* SEO Content Section */
+.quote-seo-content {
+    max-width: 680px;
+    margin: 48px auto 0;
+    padding: 32px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 16px;
+    border: 1px solid rgba(2,132,199,0.12);
+    text-align: left;
+}
+.quote-seo-content h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-8);
+    margin-bottom: 16px;
+    background: none;
+    -webkit-text-fill-color: var(--gray-8);
+}
+.seo-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+}
+.seo-services-list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.98rem;
+    color: var(--gray-6);
+}
+.seo-services-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+.seo-areas {
+    font-size: 0.95rem;
+    color: var(--gray-6);
+    line-height: 1.6;
+    margin: 0;
+}
+@media (max-width: 520px) {
+    .quote-seo-content {
+        padding: 24px 20px;
+        margin-top: 36px;
+    }
+    .seo-services-list {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+}
 </style>
 <main class="quote-page-standalone">
     <section class="quote-section" aria-label="Quote Form">
@@ -230,6 +286,22 @@
 
                     <div class="success-msg" id="successMsg"></div>
                 </form>
+            </div>
+
+            <!-- SEO Content Section -->
+            <div class="quote-seo-content">
+                <h2>Services you can request</h2>
+                <ul class="seo-services-list">
+                    <li>Gutter cleaning</li>
+                    <li>Window washing</li>
+                    <li>Pressure washing</li>
+                    <li>Moss removal</li>
+                    <li>Junk removal</li>
+                    <li>Small exterior handyman work</li>
+                </ul>
+                <p class="seo-areas">
+                    We serve homeowners across Metro Vancouver including Vancouver, Burnaby, Surrey, Richmond, Coquitlam, Langley and nearby communities.
+                </p>
             </div>
         </div>
     </section>
