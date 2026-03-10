@@ -3380,3 +3380,18 @@ footer a:hover{ color: white; }
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 30px rgba(2, 132, 199, 0.5);
 }
+
+/* ========== City links - ГОЛУБОЙ цвет ========== */
+.city,
+a.city,
+.cities-grid a.city,
+.modal-body .city,
+#citiesModal .city,
+.modal .cities-grid .city {
+    color: #0284c7 !important;
+}
+.city:hover,
+a.city:hover,
+.cities-grid a.city:hover {
+    color: #0369a1 !important;
+}

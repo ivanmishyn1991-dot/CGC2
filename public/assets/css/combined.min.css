@@ -2597,3 +2597,114 @@ body.quote-mode #quotePage select{
         max-width: 100px;
     }
 }
+
+/* ===== OVERRIDE: Equal size buttons ===== */
+.hero-cta-row .btn-callback,
+.hero-cta-row .btn-price,
+.hero-cta-row .btn-quote-hero {
+    padding: 16px 24px !important;
+    font-size: 1rem !important;
+    min-width: 150px !important;
+    flex: 0 0 auto !important;
+}
+
+@media (max-width: 768px) {
+    .hero-cta-row .btn-callback,
+    .hero-cta-row .btn-price,
+    .hero-cta-row .btn-quote-hero {
+        padding: 12px 16px !important;
+        font-size: 0.88rem !important;
+        min-width: 100px !important;
+        flex: 1 1 0 !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-cta-row .btn-callback,
+    .hero-cta-row .btn-price,
+    .hero-cta-row .btn-quote-hero {
+        padding: 10px 12px !important;
+        font-size: 0.8rem !important;
+        min-width: 90px !important;
+    }
+}
+
+/* ===== OVERRIDE: City link color - BLUE ===== */
+.city,
+.cities-grid .city,
+.modal .city,
+#citiesModal .city {
+    color: var(--primary) !important;
+}
+.city:hover,
+.cities-grid .city:hover,
+.modal .city:hover,
+#citiesModal .city:hover {
+    color: var(--primary-d) !important;
+}
+
+/* ========== FINAL OVERRIDE: Equal buttons + City color ========== */
+.hero-cta-row {
+    margin-top: 28px !important;
+    gap: 14px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+}
+
+.hero-cta-row .btn-callback,
+.hero-cta-row .btn-price,
+.hero-cta-row .btn-quote-hero {
+    padding: 16px 32px !important;
+    font-size: 1.05rem !important;
+    min-width: 140px !important;
+    max-width: 180px !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+    .hero-cta-row {
+        gap: 10px !important;
+    }
+    .hero-cta-row .btn-callback,
+    .hero-cta-row .btn-price,
+    .hero-cta-row .btn-quote-hero {
+        padding: 13px 18px !important;
+        font-size: 0.9rem !important;
+        min-width: 105px !important;
+        max-width: 130px !important;
+    }
+    .hero-cta-row i {
+        display: none !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-cta-row {
+        gap: 6px !important;
+    }
+    .hero-cta-row .btn-callback,
+    .hero-cta-row .btn-price,
+    .hero-cta-row .btn-quote-hero {
+        padding: 11px 10px !important;
+        font-size: 0.78rem !important;
+        min-width: 85px !important;
+        max-width: 110px !important;
+    }
+}
+
+/* City links - ГОЛУБОЙ цвет */
+.city,
+a.city,
+.cities-grid a.city,
+.modal-body .city,
+#citiesModal .city,
+.modal .cities-grid .city {
+    color: #0284c7 !important;
+}
+.city:hover,
+a.city:hover,
+.cities-grid a.city:hover {
+    color: #0369a1 !important;
+}
