@@ -2372,3 +2372,120 @@ body.quote-mode #quotePage select{
     }
 }
 
+
+/* ===== Price Modal Buttons with Pulse Animation ===== */
+.price-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 24px;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    will-change: transform;
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Green - Call me back */
+.price-btn-callback {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff !important;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+    animation: priceBtnPulseGreen 3s ease-in-out infinite;
+}
+.price-btn-callback::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    opacity: 0;
+    filter: blur(12px);
+    z-index: -1;
+    animation: priceGlowGreen 3s ease-in-out infinite;
+}
+@keyframes priceBtnPulseGreen {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+@keyframes priceGlowGreen {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.5; }
+}
+.price-btn-callback:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(34, 197, 94, 0.5);
+}
+
+/* Orange - Call now */
+.price-btn-call {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: #fff !important;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+    animation: priceBtnPulseOrange 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+.price-btn-call::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    opacity: 0;
+    filter: blur(12px);
+    z-index: -1;
+    animation: priceGlowOrange 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+@keyframes priceBtnPulseOrange {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+@keyframes priceGlowOrange {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.5; }
+}
+.price-btn-call:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+}
+
+/* Blue - Get your price */
+.price-btn-quote {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    color: #fff !important;
+    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.4);
+    animation: priceBtnPulseBlue 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+.price-btn-quote::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    opacity: 0;
+    filter: blur(12px);
+    z-index: -1;
+    animation: priceGlowBlue 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+@keyframes priceBtnPulseBlue {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+@keyframes priceGlowBlue {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.5; }
+}
+.price-btn-quote:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(2, 132, 199, 0.5);
+}
