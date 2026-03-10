@@ -512,35 +512,36 @@
 </div>
 
 {% block scripts %}
-    <!-- Fallback: Burger menu + Cities Modal (runs first, before main JS) -->
+    <script src="/assets/js/app.min.js?rand={{ random() }}"></script>
+    
+    <!-- Header UI: Burger menu + Cities Modal (runs AFTER app.min.js to take final control) -->
     <script>
-    (function(){
+    (function () {
         function initBurger() {
             var nav = document.getElementById('main-nav');
             var burger = document.querySelector('.hamburger');
             if (!burger || !nav) return;
-            
-            // Remove existing listeners to avoid duplicates
-            var newBurger = burger.cloneNode(true);
-            burger.parentNode.replaceChild(newBurger, burger);
-            burger = newBurger;
-            
-            burger.addEventListener('click', function(e) {
+
+            if (burger.dataset.burgerBound === '1') return;
+            burger.dataset.burgerBound = '1';
+
+            burger.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
+
                 var isOpen = nav.classList.contains('open');
                 nav.classList.toggle('open', !isOpen);
                 burger.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
             });
-            
-            nav.querySelectorAll('a').forEach(function(a) {
-                a.addEventListener('click', function() {
+
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
                     nav.classList.remove('open');
                     burger.setAttribute('aria-expanded', 'false');
                 });
             });
-            
-            document.addEventListener('click', function(e) {
+
+            document.addEventListener('click', function (e) {
                 if (!nav.classList.contains('open')) return;
                 if (!nav.contains(e.target) && !burger.contains(e.target)) {
                     nav.classList.remove('open');
@@ -548,51 +549,56 @@
                 }
             });
         }
-        
+
         function initCitiesModal() {
             var modal = document.getElementById('citiesModal');
             var trigger = document.getElementById('headerAreasTrigger');
             if (!modal || !trigger) return;
-            
-            trigger.addEventListener('click', function(e) {
+
+            if (trigger.dataset.modalBound === '1') return;
+            trigger.dataset.modalBound = '1';
+
+            trigger.addEventListener('click', function (e) {
                 e.preventDefault();
                 modal.classList.add('open');
                 modal.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
             });
-            
+
             var closeBtn = modal.querySelector('.modal-close');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
+            if (closeBtn && !closeBtn.dataset.modalBound) {
+                closeBtn.dataset.modalBound = '1';
+                closeBtn.addEventListener('click', function () {
                     modal.classList.remove('open');
                     modal.setAttribute('aria-hidden', 'true');
                     document.body.style.overflow = '';
                 });
             }
-            
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.remove('open');
-                    modal.setAttribute('aria-hidden', 'true');
-                    document.body.style.overflow = '';
-                }
-            });
+
+            if (!modal.dataset.overlayBound) {
+                modal.dataset.overlayBound = '1';
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('open');
+                        modal.setAttribute('aria-hidden', 'true');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
         }
-        
-        // Run when DOM ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                initBurger();
-                initCitiesModal();
-            });
-        } else {
+
+        function initHeaderUI() {
             initBurger();
             initCitiesModal();
         }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initHeaderUI);
+        } else {
+            initHeaderUI();
+        }
     })();
     </script>
-    
-    <script src="/assets/js/app.min.js?rand={{ random() }}"></script>
     
     <!-- Deferred Facebook Pixel - loads after page is ready -->
     <script>
