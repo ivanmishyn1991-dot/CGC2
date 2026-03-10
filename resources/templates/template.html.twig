@@ -514,6 +514,34 @@
 {% block scripts %}
     <script src="/assets/js/app.min.js?rand={{ random() }}"></script>
     
+    <!-- Fallback: Cities Modal handler (in case main JS fails) -->
+    <script>
+    (function(){
+        var modal = document.getElementById('citiesModal');
+        var trigger = document.getElementById('headerAreasTrigger');
+        if (!modal || !trigger) return;
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        });
+        var closeBtn = modal.querySelector('.modal-close');
+        if (closeBtn) closeBtn.addEventListener('click', function() {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        });
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        });
+    })();
+    </script>
+    
     <!-- Deferred Facebook Pixel - loads after page is ready -->
     <script>
     window.addEventListener('load', function() {
