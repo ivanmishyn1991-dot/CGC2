@@ -516,7 +516,7 @@
     
     <!-- Fallback: Burger menu + Cities Modal (in case main JS fails) -->
     <script>
-    (function(){
+    document.addEventListener('DOMContentLoaded', function(){
         // Burger menu
         var nav = document.getElementById('main-nav');
         var burger = document.querySelector('.hamburger');
@@ -567,7 +567,7 @@
                 }
             });
         }
-    })();
+    });
     </script>
     
     <!-- Deferred Facebook Pixel - loads after page is ready -->
