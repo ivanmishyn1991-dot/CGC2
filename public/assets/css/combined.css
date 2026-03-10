@@ -2489,3 +2489,111 @@ body.quote-mode #quotePage select{
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 30px rgba(2, 132, 199, 0.5);
 }
+
+/* ===== Hero CTA Row - 3 buttons layout ===== */
+.hero-cta-row {
+    margin-top: 28px;
+    gap: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-cta-row .btn-callback,
+.hero-cta-row .btn-price,
+.hero-cta-row .btn-quote-hero {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    min-width: 130px;
+    flex: 0 1 auto;
+}
+
+/* Blue Quote Button with pulse animation */
+.btn-quote-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 28px;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.4);
+    font-family: inherit;
+    text-decoration: none;
+    will-change: transform;
+    position: relative;
+    overflow: visible;
+    animation: btnPulseBlue 3s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+.btn-quote-hero::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 54px;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    opacity: 0;
+    filter: blur(14px);
+    z-index: -1;
+    animation: glowPulseBlue 3s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+@keyframes btnPulseBlue {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+@keyframes glowPulseBlue {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.btn-quote-hero:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 35px rgba(2, 132, 199, 0.5);
+    color: #fff;
+}
+
+/* Mobile: 3 buttons in row, smaller */
+@media (max-width: 768px) {
+    .hero-cta-row {
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+    
+    .hero-cta-row .btn-callback,
+    .hero-cta-row .btn-price,
+    .hero-cta-row .btn-quote-hero {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+        min-width: auto;
+        flex: 1 1 0;
+        max-width: 120px;
+    }
+    
+    .hero-cta-row .btn-callback i,
+    .hero-cta-row .btn-price i,
+    .hero-cta-row .btn-quote-hero i {
+        display: none;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+    .hero-cta-row .btn-callback,
+    .hero-cta-row .btn-price,
+    .hero-cta-row .btn-quote-hero {
+        padding: 10px 10px;
+        font-size: 0.78rem;
+        max-width: 100px;
+    }
+}
