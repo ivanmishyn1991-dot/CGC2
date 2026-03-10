@@ -679,19 +679,23 @@ window.addEventListener('load', () => {
     function updateStickyBar() {
         const currentScrollY = window.scrollY;
         
-        // Always show bar when near top of page (within 150px)
-        if (currentScrollY <= 150) {
+        // Always show bar when at or near top of page (within 200px)
+        if (currentScrollY <= 200) {
             stickyBar.classList.remove('hidden');
             lastScrollY = currentScrollY;
             ticking = false;
             return;
         }
         
-        // If scrolling down and scrolled more than 100px from top - hide
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Calculate scroll delta
+        const delta = currentScrollY - lastScrollY;
+        
+        // Only hide if scrolling down significantly (more than 10px)
+        if (delta > 10 && currentScrollY > 200) {
             stickyBar.classList.add('hidden');
-        } else if (currentScrollY < lastScrollY) {
-            // Scrolling up - show bar
+        } 
+        // Show if scrolling up at all
+        else if (delta < -5) {
             stickyBar.classList.remove('hidden');
         }
         
