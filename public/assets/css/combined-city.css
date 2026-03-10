@@ -3217,3 +3217,49 @@ footer a:hover{ color: white; }
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
 }
+
+/* ===== Price Modal Buttons Fix ===== */
+.price-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.price-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+.price-btn-callback {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff !important;
+}
+.price-btn-callback:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+}
+.price-btn-call {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-l) 100%);
+    color: #fff !important;
+}
+.price-btn-call:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+}
+.price-btn-quote {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: #fff !important;
+}
+.price-btn-quote:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+}
