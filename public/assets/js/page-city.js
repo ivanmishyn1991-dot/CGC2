@@ -672,17 +672,25 @@ window.addEventListener('load', () => {
         });
     });
     
-    // Hide bar on scroll down, show on scroll up
+    // Hide bar on scroll down, show on scroll up (but always show near top)
     let lastScrollY = window.scrollY;
     let ticking = false;
     
     function updateStickyBar() {
         const currentScrollY = window.scrollY;
         
-        // If scrolling down and scrolled more than 100px from top
+        // Always show bar when near top of page (within 150px)
+        if (currentScrollY <= 150) {
+            stickyBar.classList.remove('hidden');
+            lastScrollY = currentScrollY;
+            ticking = false;
+            return;
+        }
+        
+        // If scrolling down and scrolled more than 100px from top - hide
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
             stickyBar.classList.add('hidden');
-        } else {
+        } else if (currentScrollY < lastScrollY) {
             // Scrolling up - show bar
             stickyBar.classList.remove('hidden');
         }
