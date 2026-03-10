@@ -65,7 +65,7 @@ const Toast = {
     info(message, duration) { return this.show(message, 'info', duration); }
 };
 
-/* ===== MOBILE burger/nav FIX (работает, не ломает ПК) ===== */
+/* ===== MOBILE burger/nav - DISABLED (managed by inline script in template.html.twig) ===== */
 let nav = null;
 let burger = null;
 
@@ -75,26 +75,13 @@ const setBurgerState = (open) => {
     nav.classList.toggle('open', open);
 };
 
-/* ===== FIXED: load init WITHOUT forced home reset that broke mobile menu ===== */
+/* ===== FIXED: load init WITHOUT burger logic (moved to inline script) ===== */
 window.addEventListener('load', () => {
     nav = $('#main-nav');
     burger = $('.hamburger');
 
-    if (burger && nav){
-        burger.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setBurgerState(!nav.classList.contains('open'));
-        });
-
-        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setBurgerState(false)));
-
-        document.addEventListener('click', (e) => {
-            if (!nav.classList.contains('open')) return;
-            const clickedInside = nav.contains(e.target) || burger.contains(e.target);
-            if (!clickedInside) setBurgerState(false);
-        });
-    }
+    // Burger click handling is now in inline script to avoid conflicts
+    // See template.html.twig - "Header UI: Burger menu + Cities Modal"
 
     /*
     $('#logoHome')?.addEventListener('click', (e) => {
