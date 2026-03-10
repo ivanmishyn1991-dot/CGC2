@@ -58,7 +58,7 @@
         nav{display:flex;gap:40px;align-items:center}
         nav a{color:var(--gray-8);text-decoration:none;font-weight:600;font-size:1.1rem;padding:8px 12px;border-radius:8px}
         .hamburger{display:none;flex:0 0 60px;width:60px;min-width:60px;height:60px;min-height:60px;align-items:center;justify-content:center;font-size:2rem;line-height:1;background:0 0;border:none;cursor:pointer;color:var(--primary);padding:0;margin:0}
-        @media(max-width:860px){nav{display:none}.hamburger{display:inline-flex}}
+        @media(max-width:860px){nav{display:flex;position:absolute;top:var(--headerH);left:0;right:0;background:#fff;flex-direction:column;padding:18px 20px;box-shadow:0 14px 32px rgba(2,132,199,.18);transform:translateY(-14px);opacity:0;pointer-events:none;max-height:0;overflow:hidden;transition:transform .22s ease,opacity .22s ease,max-height .22s ease;z-index:2000}nav.open{transform:translateY(0);opacity:1;pointer-events:auto;max-height:70vh}.hamburger{display:inline-flex;position:absolute;left:12px;top:50%;transform:translateY(-50%);z-index:3000}#logoHome{margin:0 auto}}
         @media(min-width:861px){.header-inner{justify-content:center}}
         .hero-container{text-align:center;padding-bottom:40px}
         section{padding:80px 0 110px}
