@@ -249,15 +249,18 @@
         document.head.appendChild(script);
     }
     
-    // Load when user interacts with form
+    // Load only when user interacts with form (not on timer - saves TBT)
     document.addEventListener('focusin', function(e) {
         if (e.target.matches('input, textarea, select')) {
             loadRecaptcha();
         }
     }, { once: true });
     
-    // Also load after a short delay since user is on quote page
-    setTimeout(loadRecaptcha, 1500);
+    // Also load on first click anywhere on form
+    var form = document.getElementById('quoteForm');
+    if (form) {
+        form.addEventListener('click', loadRecaptcha, { once: true });
+    }
 })();
 </script>
 {% endblock %}
