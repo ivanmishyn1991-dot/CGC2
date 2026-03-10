@@ -2708,3 +2708,67 @@ a.city:hover,
 .cities-grid a.city:hover {
     color: #0369a1 !important;
 }
+
+/* ========== FINAL FIX: Identical button sizes ========== */
+.hero-cta-row {
+    margin-top: 28px !important;
+    gap: 12px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+}
+
+.hero-cta-row .btn-callback,
+.hero-cta-row .btn-price,
+.hero-cta-row .btn-quote-hero {
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+    padding: 16px 0 !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+@media (max-width: 520px) {
+    .hero-cta-row {
+        gap: 8px !important;
+    }
+    .hero-cta-row .btn-callback,
+    .hero-cta-row .btn-price,
+    .hero-cta-row .btn-quote-hero {
+        width: 105px !important;
+        min-width: 105px !important;
+        max-width: 105px !important;
+        padding: 14px 0 !important;
+        font-size: 0.85rem !important;
+    }
+    .hero-cta-row i {
+        display: none !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-cta-row {
+        gap: 6px !important;
+    }
+    .hero-cta-row .btn-callback,
+    .hero-cta-row .btn-price,
+    .hero-cta-row .btn-quote-hero {
+        width: 90px !important;
+        min-width: 90px !important;
+        max-width: 90px !important;
+        padding: 12px 0 !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+/* Social icons hover */
+footer a[aria-label]:hover {
+    color: var(--accent) !important;
+    transform: translateY(-3px);
+}
