@@ -83,9 +83,8 @@
     </script>
     {% endblock %}
 
-    <!-- Combined CSS - NON-BLOCKING (critical CSS already inline above) -->
-    <link rel="preload" href="/assets/css/combined-city.min.css?v=20250311P" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/combined-city.min.css?v=20250311P"></noscript>
+    <!-- Combined CSS - BLOCKING (layout-critical for city/service pages) -->
+    <link rel="stylesheet" href="/assets/css/combined-city.min.css?v=20250311R">
 </head>
 <body>
 
