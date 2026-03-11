@@ -1,9 +1,29 @@
 {% extends "template.html.twig" %}
 
-{% block title %}Frequently Asked Questions | Clean Gutters Crew{% endblock %}
-{% block meta_description %}Answers to common questions about gutter cleaning, window washing, moss removal, pricing, and service areas in Metro Vancouver.{% endblock %}
+{% block page_title %}
+<title>Frequently Asked Questions | Clean Gutters Crew</title>
+{% endblock %}
 
-{% block head_extra %}
+{% block page_meta %}
+<meta name="description" content="Answers to common questions about gutter cleaning, window washing, moss removal, pricing, and service areas in Metro Vancouver.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<link rel="canonical" href="https://cgc-services.ca/faq" />
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Frequently Asked Questions | Clean Gutters Crew">
+<meta property="og:description" content="Answers to common questions about gutter cleaning, window washing, moss removal, pricing, and service areas in Metro Vancouver.">
+<meta property="og:url" content="https://cgc-services.ca/faq">
+<meta property="og:image" content="https://cgc-services.ca/assets/images/logo.png">
+<meta property="og:site_name" content="Clean Gutters Crew">
+<meta property="og:locale" content="en_CA">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Frequently Asked Questions | Clean Gutters Crew">
+<meta name="twitter:description" content="Answers to common questions about gutter cleaning, window washing, moss removal, pricing, and service areas in Metro Vancouver.">
+<meta name="twitter:image" content="https://cgc-services.ca/assets/images/logo.png">
+{% endblock %}
+
+{% block page_schema %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

@@ -18,12 +18,32 @@ Enhance and polish an existing cleaning service website (PHP/Twig) for cgc-servi
 
 ## What's Been Implemented
 
-### Schema.org (COMPLETED)
-- Main page: LocalBusiness + WebSite + WebPage + 6 Service entities
-- FAQ page: WebPage + FAQPage with 14 Q&A items
-- All 6 service pages: WebPage + BreadcrumbList(2-level) + Service
+### Schema.org — ALL PAGES (COMPLETED Feb 2026)
+- **Main page** (`template.html.twig`): LocalBusiness + WebSite + WebPage + 6 Service entities (via `{% block page_schema %}`)
+- **FAQ page** (`faq.html.twig`): WebPage + FAQPage with 14 Q&A items (overrides `page_schema`)
+- **Quote page** (`quote.html.twig`): ContactPage + BreadcrumbList(2-level) + ContactPoint (overrides `page_schema`)
+- **All 6 service pages**: WebPage + BreadcrumbList(2-level) + Service (override `{% block schema %}` in `page.html.twig`)
   - gutter_cleaning, window_washing, pressure_washing, moss_removal, junk_removal, handyman_services
-  - All use consistent format: about=#business, areaServed=AdministrativeArea:Metro Vancouver
+  - Consistent format: about=#business, areaServed=AdministrativeArea:Metro Vancouver
+
+### Twig Block Architecture (COMPLETED Feb 2026)
+- `template.html.twig` now uses overridable blocks for:
+  - `{% block page_title %}` — `<title>` tag
+  - `{% block page_meta %}` — description, canonical, OG, Twitter tags
+  - `{% block page_schema %}` — Schema.org JSON-LD
+- Child templates (quote, faq) override these with page-specific SEO data
+- Main page inherits defaults — no changes needed
+
+### Quote Page SEO Fix (COMPLETED Feb 2026)
+- New title: "Get a Free Quote in 1 Minute | Clean Gutters Crew"
+- Own canonical: `https://cgc-services.ca/quote`
+- Own OG + Twitter tags
+- ContactPage schema with BreadcrumbList
+- `<div>` → `<h1>` for hero title (was missing H1)
+
+### FAQ Page SEO Fix (COMPLETED Feb 2026)
+- Own title, canonical (`/faq`), OG + Twitter tags
+- Previously used broken `{% block title %}` — now uses `{% block page_title %}`
 
 ### Performance Tuning (COMPLETED)
 - reCAPTCHA deferred until user interaction
@@ -32,7 +52,7 @@ Enhance and polish an existing cleaning service website (PHP/Twig) for cgc-servi
 - FontAwesome loaded via media="print" trick
 
 ### Bug Fixes (COMPLETED)
-- Mobile burger menu: isolated to inline script in template.html.twig
+- Mobile burger menu: isolated to inline script
 - Areas modal: inline fallback + CSS fix
 - Page jump fix: scrollRestoration='manual'
 - Sticky button logic corrected
@@ -47,7 +67,7 @@ Enhance and polish an existing cleaning service website (PHP/Twig) for cgc-servi
 - Navigation links reordered
 
 ## Pending Verification (USER)
-1. Schema.org — test all service pages via Google Rich Results Test
+1. Schema.org — test all pages via Google Rich Results Test
 2. Mobile burger menu — confirm working after hard refresh
 3. PageSpeed score — retest service pages (target: 90+)
 
@@ -67,9 +87,9 @@ Enhance and polish an existing cleaning service website (PHP/Twig) for cgc-servi
 │   ├── assets/{css,js,images}/
 │   └── index.php
 ├── resources/templates/
-│   ├── template.html.twig (base: main page)
+│   ├── template.html.twig (base: main page — has overridable blocks)
 │   ├── page.html.twig (base: service pages)
-│   ├── main.html.twig, faq.html.twig, quote.html.twig
+│   ├── landing/main.html.twig, faq.html.twig, quote.html.twig
 │   ├── landing/services/ (6 service pages)
 │   ├── landing/cities/ (17 city pages)
 │   └── landing/components/header.html.twig
