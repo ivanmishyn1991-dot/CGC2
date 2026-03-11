@@ -1,74 +1,81 @@
-# PRD: Cleaning Service Landing Page
+# Clean Gutters Crew — PRD
 
 ## Original Problem Statement
-Enhance and polish an existing cleaning service website built with PHP and Twig with focus on performance optimization (PageSpeed 80+), eliminating layout shifts, and UI polishing.
-
-## User Language
-Русский (Russian)
+Enhance and polish an existing cleaning service website (PHP/Twig) for cgc-services.ca.
 
 ## Core Requirements
-1. **Performance (P0):** PageSpeed 80+ mobile/desktop
-2. **CLS Fix (P0):** Eliminate Cumulative Layout Shift
-3. **UI Polish (P1):** Visual effects without performance degradation
-4. **Structure (P2):** Split large pages for better performance
+1. **Performance Optimization (P0):** PageSpeed 90+ mobile/desktop
+2. **Eliminate Regressions (P0):** Fix recurring UI bugs (burger menu, modals)
+3. **UI/UX Polishing (P1):** Consistent, performant visuals
+4. **SEO Improvement (P1):** Correct Schema.org structured data
+5. **Maintain Functionality:** Forms, modals, navigation
 
-## Architecture
-- **Backend:** PHP with FlightPHP, Twig templating
-- **Frontend:** Vanilla JavaScript, CSS, HTML
-- **No database**
+## Tech Stack
+- Backend: PHP, Twig
+- Frontend: Vanilla JS, CSS, HTML
+- No database
+- External: Telegram API, Google reCAPTCHA, Facebook Pixel, Cloudflare
 
 ## What's Been Implemented
 
-### 2025-03-09
-- [x] Fixed "Callback" and "Price" buttons
-- [x] Moved Quote form to `/quote` page
-- [x] Moved FAQ to `/faq` page
-- [x] Fixed "Areas" modal on all pages
-- [x] Fixed header button asymmetry
-- [x] Removed redundant toast notification
-- [x] Removed "Back to Home" buttons
-- [x] Implemented scroll-to-top on navigation
-- [x] Restored performant button animations
-- [x] Adjusted form field spacing on `/quote`
-- [x] Styled desktop header phone number
-- [x] Changed mobile header button to orange with glow
-- [x] Implemented scroll-based sticky button logic
-- [x] CSS versioning (cache-busting) implemented
-- [x] Removed CLS-causing block animations
-- [x] **Changed border color from yellow to #38BDF8 (blue)**
-- [x] Updated CSS versions to `?v=20250309j`
+### Schema.org (COMPLETED)
+- Main page: LocalBusiness + WebSite + WebPage + 6 Service entities
+- FAQ page: WebPage + FAQPage with 14 Q&A items
+- All 6 service pages: WebPage + BreadcrumbList(2-level) + Service
+  - gutter_cleaning, window_washing, pressure_washing, moss_removal, junk_removal, handyman_services
+  - All use consistent format: about=#business, areaServed=AdministrativeArea:Metro Vancouver
 
-## PageSpeed Optimization Done
-- reCAPTCHA deferred loading
-- Content split to separate pages
-- GPU-accelerated animations (`transform`, `opacity`)
-- CSS minification
-- Cache-busting with version parameters
+### Performance Tuning (COMPLETED)
+- reCAPTCHA deferred until user interaction
+- Hero images: loading="eager" + fetchpriority="high"
+- FB Pixel delayed to 8000ms
+- FontAwesome loaded via media="print" trick
 
-## Prioritized Backlog
+### Bug Fixes (COMPLETED)
+- Mobile burger menu: isolated to inline script in template.html.twig
+- Areas modal: inline fallback + CSS fix
+- Page jump fix: scrollRestoration='manual'
+- Sticky button logic corrected
+- Modal styling fixed for service pages
+- Duplicate citiesModal removed from main.html.twig
 
-### P0 (Critical)
-- [x] Fix CLS issues - DONE
-- [ ] Verify PageSpeed 95+ after user uploads new files
+### UI/UX (COMPLETED)
+- Hero: 3 uniform buttons with pulsating animation
+- Footer: social media icons (FB, WhatsApp, Instagram)
+- Button styles standardized
+- SEO text block on /quote page
+- Navigation links reordered
 
-### P1 (Important)
-- [ ] Image optimization (logo.webp, social-robot.webp)
+## Pending Verification (USER)
+1. Schema.org — test all service pages via Google Rich Results Test
+2. Mobile burger menu — confirm working after hard refresh
+3. PageSpeed score — retest service pages (target: 90+)
 
-### P2 (Nice to have)
-- [ ] FontAwesome `font-display: swap`
-- [ ] CSS cleanup (remove unused code)
+## Upcoming Tasks (P2)
+- Unify Handyman page Title/H1 (inconsistent: "Repairs" vs "Services")
+- Create dedicated /services page for 3-level breadcrumbs
 
-## Key Files
-- `resources/templates/template.html.twig` - Base template with CSS links
-- `public/assets/css/style.css` & `.min.css` - Main styles
-- `public/assets/css/main-page.css` & `.min.css` - Homepage styles
-- `public/assets/css/page-city.css` & `.min.css` - City page styles
-- `public/assets/js/app.js` & `.min.js` - JavaScript logic
+## Future/Backlog (P2)
+- Lightweight FAQ page template (no unnecessary modals/JS)
+- FontAwesome optimization (load only needed icon sets)
+- JS architecture refactor: consolidate app.js + page-city.js + inline scripts
 
-## 3rd Party Integrations
-- Telegram API (form notifications)
-- Google reCAPTCHA (deferred)
-- Facebook Pixel (deferred)
+## Code Architecture
+```
+/app/
+├── public/
+│   ├── assets/{css,js,images}/
+│   └── index.php
+├── resources/templates/
+│   ├── template.html.twig (base: main page)
+│   ├── page.html.twig (base: service pages)
+│   ├── main.html.twig, faq.html.twig, quote.html.twig
+│   ├── landing/services/ (6 service pages)
+│   ├── landing/cities/ (17 city pages)
+│   └── landing/components/header.html.twig
+└── .env (TG_TOKEN, TG_CHANNEL)
+```
 
-## Credentials
-- TG_TOKEN and TG_CHANNEL in root `.env`
+## Key API Endpoints
+- POST /quick-quote
+- POST /applications

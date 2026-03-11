@@ -12,11 +12,19 @@
       "@id": "https://cgc-services.ca/services/gutter_cleaning#webpage",
       "url": "https://cgc-services.ca/services/gutter_cleaning",
       "name": "Gutter Cleaning in Metro Vancouver BC | Clean Gutters Crew",
-      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
-      "about": { "@id": "https://cgc-services.ca/services/gutter_cleaning#service" },
-      "description": "Professional gutter cleaning for homes in Metro Vancouver. Prevent overflow, leaks, and water damage with regular maintenance. Fully insured, pay after the job.",
-      "breadcrumb": { "@id": "https://cgc-services.ca/services/gutter_cleaning#breadcrumb" },
+      "isPartOf": {"@id": "https://cgc-services.ca/#website"},
+      "about": {"@id": "https://cgc-services.ca/#business"},
+      "description": "Professional gutter cleaning in Metro Vancouver to help prevent overflow, roof leaks, water damage, and drainage problems.",
+      "breadcrumb": {"@id": "https://cgc-services.ca/services/gutter_cleaning#breadcrumb"},
       "inLanguage": "en-CA"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/services/gutter_cleaning#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/"},
+        {"@type": "ListItem", "position": 2, "name": "Gutter Cleaning", "item": "https://cgc-services.ca/services/gutter_cleaning"}
+      ]
     },
     {
       "@type": "Service",
@@ -24,105 +32,9 @@
       "name": "Gutter Cleaning",
       "serviceType": "Gutter Cleaning",
       "url": "https://cgc-services.ca/services/gutter_cleaning",
-      "provider": { "@id": "https://cgc-services.ca/#business" },
-      "areaServed": [
-        { "@type": "City", "name": "Vancouver" },
-        { "@type": "City", "name": "Burnaby" },
-        { "@type": "City", "name": "Surrey" },
-        { "@type": "City", "name": "Richmond" },
-        { "@type": "City", "name": "Coquitlam" },
-        { "@type": "City", "name": "Langley" },
-        { "@type": "City", "name": "Delta" },
-        { "@type": "City", "name": "New Westminster" },
-        { "@type": "City", "name": "North Vancouver" },
-        { "@type": "City", "name": "West Vancouver" }
-      ],
-      "description": "Complete gutter cleaning to remove leaves, pine needles, and debris. Prevents roof leaks, fascia damage, foundation issues, basement moisture, and mold. Includes debris removal, downspout flow check, and cleanup."
-    },
-    {
-      "@type": "Offer",
-      "@id": "https://cgc-services.ca/services/gutter_cleaning#offer",
-      "itemOffered": { "@id": "https://cgc-services.ca/services/gutter_cleaning#service" },
-      "priceCurrency": "CAD",
-      "price": "150",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "150",
-        "priceCurrency": "CAD",
-        "unitText": "starting price"
-      },
-      "availability": "https://schema.org/InStock",
-      "validFrom": "2024-01-01"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://cgc-services.ca/services/gutter_cleaning#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How long does gutter cleaning take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Usually 1–4 hours depending on the home size, number of stories, and how clogged the gutters are. If you share a couple photos, we can estimate more accurately."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How often should gutters be cleaned here?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most homes need 1–2 times per year (spring and fall). If you have many trees nearby, twice a year is best to prevent overflows during heavy rain."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does gutter cleaning cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Single-story homes often start around $180–250. Price depends on roof size, number of stories, access, and any add-ons. We confirm the total price before we begin."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is included in a standard gutter cleaning visit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A standard gutter cleaning visit usually includes debris removal from gutters, basic downspout flow check, cleanup of the work area, and photo proof on request. We confirm the scope before we start."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do clogged gutters cause roof leaks?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, clogged gutters can eventually lead to roof leaks. When gutters are blocked with leaves, moss, and debris, rainwater cannot flow away properly. Water begins to overflow and can get under shingles or behind the fascia. Over time this moisture may damage the roof structure, siding, and even the foundation of the home. Regular gutter cleaning helps prevent these problems and keeps water draining safely away from your house."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://cgc-services.ca/services/gutter_cleaning#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://cgc-services.ca/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://cgc-services.ca/#services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Gutter Cleaning",
-          "item": "https://cgc-services.ca/services/gutter_cleaning"
-        }
-      ]
+      "provider": {"@id": "https://cgc-services.ca/#business"},
+      "areaServed": {"@type": "AdministrativeArea", "name": "Metro Vancouver"},
+      "description": "Professional gutter cleaning for homes in Metro Vancouver to help prevent overflow, leaks, and water damage."
     }
   ]
 }
