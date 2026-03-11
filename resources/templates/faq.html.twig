@@ -3,6 +3,49 @@
 {% block title %}Frequently Asked Questions | Clean Gutters Crew{% endblock %}
 {% block meta_description %}Answers to common questions about gutter cleaning, window washing, moss removal, pricing, and service areas in Metro Vancouver.{% endblock %}
 
+{% block head_extra %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/faq#webpage",
+      "url": "https://cgc-services.ca/faq",
+      "name": "FAQ | Clean Gutters Crew",
+      "isPartOf": {"@id": "https://cgc-services.ca/#website"},
+      "about": {"@id": "https://cgc-services.ca/#business"},
+      "mainEntity": {"@id": "https://cgc-services.ca/faq#faq"},
+      "description": "Quick answers before you book. Frequently asked questions about gutter cleaning, window washing, moss removal, pressure washing, junk removal and handyman services in Metro Vancouver.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cgc-services.ca/faq#faq",
+      "url": "https://cgc-services.ca/faq",
+      "isPartOf": {"@id": "https://cgc-services.ca/faq#webpage"},
+      "mainEntity": [
+        {"@type": "Question", "name": "How long does gutter cleaning take?", "acceptedAnswer": {"@type": "Answer", "text": "Usually 1–4 hours depending on the home size, number of stories, and how clogged the gutters are. If you share a couple photos, we can estimate more accurately."}},
+        {"@type": "Question", "name": "Do I need to be home during the service?", "acceptedAnswer": {"@type": "Answer", "text": "No. As long as we can access the work areas (for example, gates unlocked), you don't have to be home. We clean carefully and leave the area tidy."}},
+        {"@type": "Question", "name": "How often should gutters be cleaned here?", "acceptedAnswer": {"@type": "Answer", "text": "Most homes need 1–2 times per year (spring and fall). If you have many trees nearby, twice a year is best to prevent overflows during heavy rain."}},
+        {"@type": "Question", "name": "Are you insured?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We're fully insured. If you need confirmation for peace of mind, we can provide details when you request your quote."}},
+        {"@type": "Question", "name": "How much does gutter cleaning cost?", "acceptedAnswer": {"@type": "Answer", "text": "Single-story homes often start around $180–250. Price depends on roof size, number of stories, access, and any add-ons. We confirm the total price before we begin."}},
+        {"@type": "Question", "name": "What is included in a standard gutter cleaning visit?", "acceptedAnswer": {"@type": "Answer", "text": "A standard gutter cleaning visit usually includes debris removal from gutters, basic downspout flow check, cleanup of the work area, and photo proof on request. We confirm the scope before we start."}},
+        {"@type": "Question", "name": "Do clogged gutters cause roof leaks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, clogged gutters can eventually lead to roof leaks. When gutters are blocked with leaves, moss, and debris, rainwater cannot flow away properly. Water begins to overflow and can get under shingles or behind the fascia. Over time this moisture may damage the roof structure, siding, and even the foundation of the home. Regular gutter cleaning helps prevent these problems and keeps water draining safely away from your house."}},
+        {"@type": "Question", "name": "Do you work in rain or winter?", "acceptedAnswer": {"@type": "Answer", "text": "We avoid heavy rain or snow for safety and to prevent mess. In winter, we usually work on dry days and above-freezing temperatures."}},
+        {"@type": "Question", "name": "Do you clean windows inside and outside?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can do exterior-only or both interior and exterior. We can also include sliding doors and sills if agreed in advance."}},
+        {"@type": "Question", "name": "Is roof moss removal safe for my roof?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We use safe methods and avoid harsh approaches that damage shingles. When possible, we minimize roof foot traffic."}},
+        {"@type": "Question", "name": "Do you provide before/after photos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on request. Many homeowners love photo proof, especially for gutters and roof work, so you can clearly see the result."}},
+        {"@type": "Question", "name": "How do bookings and payments work?", "acceptedAnswer": {"@type": "Answer", "text": "Request a quote or call us. We confirm the price and schedule. Payment is after the job (cash, e-Transfer, or card). No deposit required."}},
+        {"@type": "Question", "name": "What areas do we serve?", "acceptedAnswer": {"@type": "Answer", "text": "We serve Vancouver, Burnaby, Surrey, Richmond, Coquitlam, Langley, Delta, New Westminster, North Vancouver, West Vancouver, Maple Ridge, Pitt Meadows, Port Coquitlam, Port Moody, White Rock, Tsawwassen and Ladner."}},
+        {"@type": "Question", "name": "Why do Metro Vancouver homes need regular exterior cleaning?", "acceptedAnswer": {"@type": "Answer", "text": "Frequent rain, tree debris, and moss growth can quickly lead to blocked gutters, slippery surfaces, stained siding, and roof wear. Routine cleaning helps protect the home and reduce repair risk."}}
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <script>
 // Scroll to top on page load
