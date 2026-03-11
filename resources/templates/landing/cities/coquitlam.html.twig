@@ -12,38 +12,54 @@
       "@id": "https://cgc-services.ca/cities/coquitlam#webpage",
       "url": "https://cgc-services.ca/cities/coquitlam",
       "name": "Gutter Cleaning in Coquitlam BC | Clean Gutters Crew",
-      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
-      "about": { "@id": "https://cgc-services.ca/cities/coquitlam#service" },
-      "description": "Professional gutter cleaning in Coquitlam, BC. Protect your home from water damage with regular maintenance. Prices starting at $180 for standard homes. Serving all Coquitlam neighbourhoods.",
+      "description": "Professional gutter cleaning services in Coquitlam, BC. We also provide window washing, pressure washing, moss removal and other exterior cleaning services.",
+      "isPartOf": {
+        "@id": "https://cgc-services.ca/#website"
+      },
+      "about": {
+        "@id": "https://cgc-services.ca/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://cgc-services.ca/cities/coquitlam#breadcrumb"
+      },
       "inLanguage": "en-CA"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cgc-services.ca/cities/coquitlam#service",
-      "name": "Gutter Cleaning in Coquitlam",
-      "serviceType": "Gutter Cleaning",
-      "provider": { "@id": "https://cgc-services.ca/#business" },
-      "areaServed": { "@type": "City", "name": "Coquitlam" },
-      "url": "https://cgc-services.ca/cities/coquitlam",
-      "description": "Residential gutter cleaning in Coquitlam. Thorough debris removal, downspout flushing, and full inspection to prevent roof leaks, basement flooding, and foundation problems.",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://cgc-services.ca/cities/coquitlam",
-        "priceCurrency": "CAD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "priceCurrency": "CAD",
-          "minPrice": 180
-        },
-        "availability": "https://schema.org/InStock"
-      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://cgc-services.ca/cities/coquitlam#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
-        { "@type": "ListItem", "position": 2, "name": "Coquitlam", "item": "https://cgc-services.ca/cities/coquitlam" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgc-services.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Coquitlam",
+          "item": "https://cgc-services.ca/cities/coquitlam"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/coquitlam#service",
+      "name": "Exterior Cleaning Services in Coquitlam",
+      "provider": {
+        "@id": "https://cgc-services.ca/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Coquitlam"
+      },
+      "serviceType": [
+        "Gutter Cleaning",
+        "Window Washing",
+        "Pressure Washing",
+        "Moss Removal",
+        "Junk Removal",
+        "Handyman Services"
       ]
     }
   ]
@@ -107,4 +123,31 @@
 
     <p><strong>Contact us today for your free estimate and keep your Tri-Cities home safe and dry.</strong></p>
 
+
+    <div class="city-extras">
+        <h2>Other Exterior Cleaning Services in Coquitlam</h2>
+        <p>In addition to gutter cleaning, we also provide:</p>
+        <ul>
+            <li><a href="/services/window_washing">Window Washing</a> in Coquitlam</li>
+            <li><a href="/services/pressure_washing">Pressure Washing</a> in Coquitlam</li>
+            <li><a href="/services/moss_removal">Roof Moss Removal</a> in Coquitlam</li>
+            <li><a href="/services/junk_removal">Junk Removal</a> in Coquitlam</li>
+            <li><a href="/services/handyman_services">Handyman Services</a> in Coquitlam</li>
+        </ul>
+
+        <h2>Nearby Service Areas</h2>
+        <ul>
+            <li><a href="/cities/burnaby">Exterior Cleaning in Burnaby</a></li>
+            <li><a href="/cities/port_coquitlam">Exterior Cleaning in Port Coquitlam</a></li>
+            <li><a href="/cities/port_moody">Exterior Cleaning in Port Moody</a></li>
+            <li><a href="/cities/new_westminster">Exterior Cleaning in New Westminster</a></li>
+            <li><a href="/cities/surrey">Exterior Cleaning in Surrey</a></li>
+        </ul>
+
+        <h2>Get a Quote for Exterior Cleaning in Coquitlam</h2>
+        <p>Request a fast quote for gutter cleaning, window washing, pressure washing, moss removal or junk removal in Coquitlam.</p>
+        <div class="cta-row" style="margin-top:18px;">
+            <a class="btn-primary btn-quote-animated" href="/quote">Get Your Quote</a>
+        </div>
+    </div>
 {% endblock %}

@@ -12,38 +12,54 @@
       "@id": "https://cgc-services.ca/cities/white_rock#webpage",
       "url": "https://cgc-services.ca/cities/white_rock",
       "name": "Gutter Cleaning in White Rock BC | Clean Gutters Crew",
-      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
-      "about": { "@id": "https://cgc-services.ca/cities/white_rock#service" },
-      "description": "Professional gutter cleaning in White Rock, BC. Coastal protection for ocean-exposed homes in East Beach, West Beach, Uptown, Five Corners, and surrounding residential areas.",
+      "description": "Professional gutter cleaning services in White Rock, BC. We also provide window washing, pressure washing, moss removal and other exterior cleaning services.",
+      "isPartOf": {
+        "@id": "https://cgc-services.ca/#website"
+      },
+      "about": {
+        "@id": "https://cgc-services.ca/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://cgc-services.ca/cities/white_rock#breadcrumb"
+      },
       "inLanguage": "en-CA"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cgc-services.ca/cities/white_rock#service",
-      "name": "Gutter Cleaning in White Rock",
-      "serviceType": "Gutter Cleaning",
-      "provider": { "@id": "https://cgc-services.ca/#business" },
-      "areaServed": { "@type": "City", "name": "White Rock" },
-      "url": "https://cgc-services.ca/cities/white_rock",
-      "description": "Gutter cleaning for coastal properties exposed to ocean air, seasonal wind gusts, and steady rainfall. Sediment and organic buildup removal, vertical outlet clearing, and alignment inspection.",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://cgc-services.ca/cities/white_rock",
-        "priceCurrency": "CAD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "priceCurrency": "CAD",
-          "minPrice": 150
-        },
-        "availability": "https://schema.org/InStock"
-      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://cgc-services.ca/cities/white_rock#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
-        { "@type": "ListItem", "position": 2, "name": "White Rock", "item": "https://cgc-services.ca/cities/white_rock" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgc-services.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "White Rock",
+          "item": "https://cgc-services.ca/cities/white_rock"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/white_rock#service",
+      "name": "Exterior Cleaning Services in White Rock",
+      "provider": {
+        "@id": "https://cgc-services.ca/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "White Rock"
+      },
+      "serviceType": [
+        "Gutter Cleaning",
+        "Window Washing",
+        "Pressure Washing",
+        "Moss Removal",
+        "Junk Removal",
+        "Handyman Services"
       ]
     }
   ]
@@ -85,4 +101,29 @@
 
     <p><strong>Schedule your service today and ensure your coastal property remains protected throughout every season.</strong></p>
 
+
+    <div class="city-extras">
+        <h2>Other Exterior Cleaning Services in White Rock</h2>
+        <p>In addition to gutter cleaning, we also provide:</p>
+        <ul>
+            <li><a href="/services/window_washing">Window Washing</a> in White Rock</li>
+            <li><a href="/services/pressure_washing">Pressure Washing</a> in White Rock</li>
+            <li><a href="/services/moss_removal">Roof Moss Removal</a> in White Rock</li>
+            <li><a href="/services/junk_removal">Junk Removal</a> in White Rock</li>
+            <li><a href="/services/handyman_services">Handyman Services</a> in White Rock</li>
+        </ul>
+
+        <h2>Nearby Service Areas</h2>
+        <ul>
+            <li><a href="/cities/surrey">Exterior Cleaning in Surrey</a></li>
+            <li><a href="/cities/delta">Exterior Cleaning in Delta</a></li>
+            <li><a href="/cities/langley">Exterior Cleaning in Langley</a></li>
+        </ul>
+
+        <h2>Get a Quote for Exterior Cleaning in White Rock</h2>
+        <p>Request a fast quote for gutter cleaning, window washing, pressure washing, moss removal or junk removal in White Rock.</p>
+        <div class="cta-row" style="margin-top:18px;">
+            <a class="btn-primary btn-quote-animated" href="/quote">Get Your Quote</a>
+        </div>
+    </div>
 {% endblock %}

@@ -12,38 +12,54 @@
       "@id": "https://cgc-services.ca/cities/burnaby#webpage",
       "url": "https://cgc-services.ca/cities/burnaby",
       "name": "Gutter Cleaning in Burnaby BC | Clean Gutters Crew",
-      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
-      "about": { "@id": "https://cgc-services.ca/cities/burnaby#service" },
-      "description": "Professional gutter cleaning service in Burnaby, BC. Clean Gutters Crew helps homeowners prevent clogged gutters, water overflow, and moisture-related exterior damage. Prices start from $150 depending on property size, access, and gutter condition.",
+      "description": "Professional gutter cleaning services in Burnaby, BC. We also provide window washing, pressure washing, moss removal and other exterior cleaning services.",
+      "isPartOf": {
+        "@id": "https://cgc-services.ca/#website"
+      },
+      "about": {
+        "@id": "https://cgc-services.ca/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://cgc-services.ca/cities/burnaby#breadcrumb"
+      },
       "inLanguage": "en-CA"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cgc-services.ca/cities/burnaby#service",
-      "name": "Gutter Cleaning in Burnaby",
-      "serviceType": "Gutter Cleaning",
-      "provider": { "@id": "https://cgc-services.ca/#business" },
-      "areaServed": { "@type": "City", "name": "Burnaby" },
-      "url": "https://cgc-services.ca/cities/burnaby",
-      "description": "Residential gutter cleaning service for homes in Burnaby, British Columbia. Removes leaves, moss, needles, and debris so water can drain properly and reduce the risk of overflow and exterior water damage.",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://cgc-services.ca/cities/burnaby",
-        "priceCurrency": "CAD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "priceCurrency": "CAD",
-          "minPrice": 150
-        },
-        "availability": "https://schema.org/InStock"
-      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://cgc-services.ca/cities/burnaby#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
-        { "@type": "ListItem", "position": 2, "name": "Burnaby", "item": "https://cgc-services.ca/cities/burnaby" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgc-services.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Burnaby",
+          "item": "https://cgc-services.ca/cities/burnaby"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/burnaby#service",
+      "name": "Exterior Cleaning Services in Burnaby",
+      "provider": {
+        "@id": "https://cgc-services.ca/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Burnaby"
+      },
+      "serviceType": [
+        "Gutter Cleaning",
+        "Window Washing",
+        "Pressure Washing",
+        "Moss Removal",
+        "Junk Removal",
+        "Handyman Services"
       ]
     }
   ]
@@ -63,5 +79,31 @@
     <p>Transparency is an important part of the service. Before any work begins, the scope and total cost are confirmed so there are no surprises. Many Burnaby residents prefer straightforward pricing and a calm, professional experience rather than aggressive sales tactics. Whether your home is a single-family house, townhouse, or rental property, routine gutter maintenance helps prevent avoidable damage and preserves curb appeal in a climate where moisture is a constant factor.</p>
 
     <p>For homeowners, gutter cleaning is ultimately about peace of mind. A properly functioning drainage system protects the roofline, prevents water intrusion, and supports the long-term condition of the entire building envelope. In a city like Burnaby, where rain is part of everyday life for much of the year, staying ahead of gutter problems is one of the simplest ways to safeguard your home and avoid unexpected repair costs.</p>
-{% endblock %}
 
+    <div class="city-extras">
+        <h2>Other Exterior Cleaning Services in Burnaby</h2>
+        <p>In addition to gutter cleaning, we also provide:</p>
+        <ul>
+            <li><a href="/services/window_washing">Window Washing</a> in Burnaby</li>
+            <li><a href="/services/pressure_washing">Pressure Washing</a> in Burnaby</li>
+            <li><a href="/services/moss_removal">Roof Moss Removal</a> in Burnaby</li>
+            <li><a href="/services/junk_removal">Junk Removal</a> in Burnaby</li>
+            <li><a href="/services/handyman_services">Handyman Services</a> in Burnaby</li>
+        </ul>
+
+        <h2>Nearby Service Areas</h2>
+        <ul>
+            <li><a href="/cities/vancouver">Exterior Cleaning in Vancouver</a></li>
+            <li><a href="/cities/new_westminster">Exterior Cleaning in New Westminster</a></li>
+            <li><a href="/cities/coquitlam">Exterior Cleaning in Coquitlam</a></li>
+            <li><a href="/cities/port_moody">Exterior Cleaning in Port Moody</a></li>
+            <li><a href="/cities/north_vancouver">Exterior Cleaning in North Vancouver</a></li>
+        </ul>
+
+        <h2>Get a Quote for Exterior Cleaning in Burnaby</h2>
+        <p>Request a fast quote for gutter cleaning, window washing, pressure washing, moss removal or junk removal in Burnaby.</p>
+        <div class="cta-row" style="margin-top:18px;">
+            <a class="btn-primary btn-quote-animated" href="/quote">Get Your Quote</a>
+        </div>
+    </div>
+{% endblock %}

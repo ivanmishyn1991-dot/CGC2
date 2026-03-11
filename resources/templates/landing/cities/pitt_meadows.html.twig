@@ -12,38 +12,54 @@
       "@id": "https://cgc-services.ca/cities/pitt_meadows#webpage",
       "url": "https://cgc-services.ca/cities/pitt_meadows",
       "name": "Gutter Cleaning in Pitt Meadows BC | Clean Gutters Crew",
-      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
-      "about": { "@id": "https://cgc-services.ca/cities/pitt_meadows#service" },
-      "description": "Professional gutter cleaning in Pitt Meadows, BC. Reliable drainage protection for riverside homes in Central Pitt Meadows, South Bonson, Mid Meadows, Osprey Village, and surrounding areas.",
+      "description": "Professional gutter cleaning services in Pitt Meadows, BC. We also provide window washing, pressure washing, moss removal and other exterior cleaning services.",
+      "isPartOf": {
+        "@id": "https://cgc-services.ca/#website"
+      },
+      "about": {
+        "@id": "https://cgc-services.ca/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://cgc-services.ca/cities/pitt_meadows#breadcrumb"
+      },
       "inLanguage": "en-CA"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cgc-services.ca/cities/pitt_meadows#service",
-      "name": "Gutter Cleaning in Pitt Meadows",
-      "serviceType": "Gutter Cleaning",
-      "provider": { "@id": "https://cgc-services.ca/#business" },
-      "areaServed": { "@type": "City", "name": "Pitt Meadows" },
-      "url": "https://cgc-services.ca/cities/pitt_meadows",
-      "description": "Gutter cleaning for homes between rivers, farmland, and open landscapes. Comprehensive debris removal, downspout clearing, connection point assessment, and support bracket inspection.",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://cgc-services.ca/cities/pitt_meadows",
-        "priceCurrency": "CAD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "priceCurrency": "CAD",
-          "minPrice": 150
-        },
-        "availability": "https://schema.org/InStock"
-      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://cgc-services.ca/cities/pitt_meadows#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
-        { "@type": "ListItem", "position": 2, "name": "Pitt Meadows", "item": "https://cgc-services.ca/cities/pitt_meadows" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgc-services.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pitt Meadows",
+          "item": "https://cgc-services.ca/cities/pitt_meadows"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/pitt_meadows#service",
+      "name": "Exterior Cleaning Services in Pitt Meadows",
+      "provider": {
+        "@id": "https://cgc-services.ca/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Pitt Meadows"
+      },
+      "serviceType": [
+        "Gutter Cleaning",
+        "Window Washing",
+        "Pressure Washing",
+        "Moss Removal",
+        "Junk Removal",
+        "Handyman Services"
       ]
     }
   ]
@@ -85,4 +101,30 @@
     <p>Effective water management is a fundamental part of protecting homes in Pitt Meadows. Regular gutter maintenance helps preserve structural integrity, minimize moisture exposure, and support the long-term durability of exterior materials.</p>
 
     <p><strong>Schedule your service today to keep your Pitt Meadows home prepared for every rainy season.</strong></p>
+
+    <div class="city-extras">
+        <h2>Other Exterior Cleaning Services in Pitt Meadows</h2>
+        <p>In addition to gutter cleaning, we also provide:</p>
+        <ul>
+            <li><a href="/services/window_washing">Window Washing</a> in Pitt Meadows</li>
+            <li><a href="/services/pressure_washing">Pressure Washing</a> in Pitt Meadows</li>
+            <li><a href="/services/moss_removal">Roof Moss Removal</a> in Pitt Meadows</li>
+            <li><a href="/services/junk_removal">Junk Removal</a> in Pitt Meadows</li>
+            <li><a href="/services/handyman_services">Handyman Services</a> in Pitt Meadows</li>
+        </ul>
+
+        <h2>Nearby Service Areas</h2>
+        <ul>
+            <li><a href="/cities/maple_ridge">Exterior Cleaning in Maple Ridge</a></li>
+            <li><a href="/cities/port_coquitlam">Exterior Cleaning in Port Coquitlam</a></li>
+            <li><a href="/cities/coquitlam">Exterior Cleaning in Coquitlam</a></li>
+            <li><a href="/cities/surrey">Exterior Cleaning in Surrey</a></li>
+        </ul>
+
+        <h2>Get a Quote for Exterior Cleaning in Pitt Meadows</h2>
+        <p>Request a fast quote for gutter cleaning, window washing, pressure washing, moss removal or junk removal in Pitt Meadows.</p>
+        <div class="cta-row" style="margin-top:18px;">
+            <a class="btn-primary btn-quote-animated" href="/quote">Get Your Quote</a>
+        </div>
+    </div>
 {% endblock %}

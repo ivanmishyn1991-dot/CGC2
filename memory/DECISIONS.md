@@ -83,6 +83,20 @@
 - При любых JS-изменениях — ВСЕГДА проверять бургер-меню на мобильном
 - После минификации JS/CSS — проверять все страницы
 
+## City Pages (17 штук)
+
+- Title и H1 — НЕ МЕНЯТЬ. "Gutter Cleaning in [City]" это primary keyword, менять = потеря ранних SEO-позиций
+- Schema шире чем title — это нормально. `serviceType` массив из 6 услуг, `Service.name` = "Exterior Cleaning Services in [City]"
+- `about` → `#business` (не `#service`)
+- Нет `offers` в schema
+- BreadcrumbList: 2 уровня (Home → City Name)
+- WebPage.description — ОБЯЗАТЕЛЬНО оставлять, с упоминанием других услуг
+- Основной контент оставить (про gutter cleaning), НЕ переписывать
+- Блок "Other Exterior Cleaning Services in [City]" с ссылками на service pages — добавлен
+- Блок "Nearby Service Areas" с 5-6 соседних городов — добавлен (создаёт local SEO cluster)
+- CTA блок с кнопкой Quote — добавлен
+- Соседние города определены по географии Metro Vancouver, НЕ полный список из 17
+
 ## Известные нерешённые проблемы
 
 - Title/H1 на handyman: Title="Handyman Repairs...", H1="Handyman Services" — несогласованность

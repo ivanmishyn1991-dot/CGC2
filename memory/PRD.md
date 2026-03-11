@@ -34,6 +34,12 @@ Enhance and polish an existing cleaning service website (PHP/Twig) for cgc-servi
 - Child templates (quote, faq) override these with page-specific SEO data
 - Main page inherits defaults — no changes needed
 
+### City Pages (COMPLETED Feb 2026)
+- All 17 city pages updated with new schema: WebPage + BreadcrumbList(2-level) + Service(6 serviceTypes)
+- Internal linking added: service links, nearby cities (5-6), CTA block
+- Title/H1/content preserved (primary keyword: "gutter cleaning + city")
+- Schema broadened with all 6 services in serviceType array
+
 ### Quote Page SEO Fix (COMPLETED Feb 2026)
 - New title: "Get a Free Quote in 1 Minute | Clean Gutters Crew"
 - Own canonical: `https://cgc-services.ca/quote`
