@@ -13,34 +13,57 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://connect.facebook.net">
     
-    <!-- Critical CSS -->
+    <!-- Critical CSS: above-fold rendering without external CSS -->
     <style>
-        :root{--primary:#0284c7;--primary-d:#0369a1;--primary-l:#38bdf8;--accent:#fbbf24;--bg-light:#f0f9ff;--gray-1:#f8fafc;--gray-6:#475569;--gray-8:#0f172a;--radius:16px;--headerH:96px}
-        *{box-sizing:border-box;margin:0;padding:0}
-        html{scroll-behavior:smooth}
-        body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg-light);color:var(--gray-8);line-height:1.65;overflow-x:hidden}
+        :root{--primary:#0284c7;--primary-d:#0369a1;--primary-l:#38bdf8;--accent:#fbbf24;--accent-d:#f59e0b;--bg-light:#f0f9ff;--gray-1:#f8fafc;--gray-2:#e2e8f0;--gray-3:#cbd5e1;--gray-6:#475569;--gray-8:#0f172a;--radius:16px;--shadow-sm:0 4px 12px rgba(2,132,199,0.08);--shadow-md:0 10px 30px rgba(2,132,199,0.14);--headerH:96px;--fs-base:16px;--fs-mobile:12.8px;--lh-mobile:1.5}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;scroll-padding-top:var(--headerH)}
+        body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg-light);color:var(--gray-8);line-height:1.65;font-size:var(--fs-base);overflow-x:hidden}
+        body.modal-open{overflow:hidden}
         .container{max-width:1180px;margin:0 auto;padding:0 20px}
         h1,h2,h3{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.25;font-weight:800}
-        header{position:sticky;top:0;z-index:1000;height:var(--headerH);min-height:var(--headerH);background:#fff;box-shadow:0 6px 20px rgba(2,132,199,.12)}
-        .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--headerH);min-height:var(--headerH);gap:16px;position:relative}
-        .logo{flex:0 0 200px;width:200px;min-width:200px;height:80px;display:flex;align-items:center;cursor:pointer}
-        .logo a,.logo img{display:block}
-        .logo img{width:200px;height:80px}
-        nav{display:flex;gap:40px;align-items:center}
-        nav a{color:var(--gray-8);text-decoration:none;font-weight:600}
-        .hamburger{display:none;flex:0 0 60px;width:60px;min-width:60px;height:60px;min-height:60px;align-items:center;justify-content:center;font-size:2rem;line-height:1;background:0 0;border:none;cursor:pointer;color:var(--primary);padding:0;margin:0}
-        @media(max-width:860px){nav{display:none}.hamburger{display:inline-flex}}
+        section{padding:80px 0 110px}
+        h2{font-size:clamp(2.2rem,7vw,4.0rem);text-align:center;margin-bottom:1.3em;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+        header{position:sticky;top:0;z-index:1000;height:var(--headerH);background:#fff;box-shadow:0 6px 20px rgba(2,132,199,.12);transform:translateZ(0)}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--headerH);gap:16px;position:relative}
+        .logo{font-size:2.8rem;font-weight:800;cursor:pointer;white-space:nowrap}
+        .logo img{display:block;width:200px;height:80px}
+        nav{display:flex;gap:40px;align-items:center;min-height:48px}
+        nav a{color:var(--gray-8);text-decoration:none;font-weight:600;font-size:1.1rem;white-space:nowrap;padding:8px 12px;border-radius:8px;min-width:60px;min-height:40px;display:inline-flex;align-items:center;justify-content:center}
+        .hamburger{display:none;font-size:2.8rem;background:none;border:none;cursor:pointer;color:var(--primary);line-height:1;padding:8px 10px;border-radius:12px;width:60px;height:60px;position:absolute;left:12px;top:50%;transform:translateY(-50%);align-items:center;justify-content:center}
+        .article-doc{max-width:900px;margin:0 auto;padding:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.8}
+        .article-doc h1{font-size:2.3rem;line-height:1.25;margin-bottom:28px;font-weight:800;color:#0284c7}
+        .article-doc h2{font-size:1.7rem;margin-top:48px;margin-bottom:18px;font-weight:800;background:none;-webkit-text-fill-color:initial;text-align:left;color:#0284c7}
+        .article-doc p{font-size:1.06rem;margin-bottom:18px;color:var(--gray-6);font-weight:600}
+        .article-doc ul{margin:20px 0 24px 26px}
+        .article-doc li{margin-bottom:12px;color:var(--gray-6);font-weight:600}
+        .article-doc a{color:#0284c7}
+        .article-doc strong{font-weight:700}
+        .city-extras{margin-top:48px}
+        .city-extras h2{font-size:1.7rem;margin-top:36px;margin-bottom:14px;background:none;-webkit-text-fill-color:initial;text-align:left;color:#0284c7}
+        .city-extras p{font-size:1.06rem;margin-bottom:12px;color:var(--gray-6);font-weight:600}
+        .city-extras ul{margin:12px 0 24px 26px}
+        .city-extras li{margin-bottom:8px}
+        .city-extras a{color:var(--primary);font-weight:700;text-decoration:none}
+        .city-extras a:hover{text-decoration:underline}
+        .btn-primary{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(90deg,var(--primary),var(--primary-l));color:#fff;border:none;border-radius:999px;font-weight:900;padding:14px 28px;text-decoration:none;cursor:pointer;box-shadow:0 10px 24px rgba(2,132,199,0.24)}
+        footer{background:var(--primary-d);color:#fff;padding:90px 0 60px;text-align:center}
+        footer a{color:var(--accent);text-decoration:none;font-weight:900}
+        @media(max-width:860px){nav{display:none}.hamburger{display:flex!important;position:absolute!important;left:12px!important;top:50%!important;transform:translateY(-50%)!important;z-index:3000!important}#logoHome{order:2;margin:0 auto;flex:0 0 auto}.side-panel{display:none!important}section{padding:64px 0 92px}.header-inner{justify-content:center!important;gap:0!important;position:relative}}
         @media(min-width:861px){.header-inner{justify-content:center}}
+        @media(max-width:520px){:root{--headerH:84px}body{font-size:var(--fs-mobile);line-height:var(--lh-mobile)}.article-doc h1{font-size:1.9rem}.article-doc h2{font-size:1.45rem}}
     </style>
     
-    <!-- FontAwesome - Deferred -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <!-- FontAwesome - Deferred (solid only) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css"></noscript>
 
     {% block styles %}{% endblock %}
     
     {% block schema %}
-    <!-- Default Schema.org (overridden in service pages) -->
+    <!-- Default Schema.org (overridden in service/city pages) -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -60,8 +83,9 @@
     </script>
     {% endblock %}
 
-    <!-- Combined CSS for fewer requests -->
-    <link rel="stylesheet" href="/assets/css/combined-city.min.css?v=20250310F">
+    <!-- Combined CSS - NON-BLOCKING (critical CSS already inline above) -->
+    <link rel="preload" href="/assets/css/combined-city.min.css?v=20250311P" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/combined-city.min.css?v=20250311P"></noscript>
 </head>
 <body>
 

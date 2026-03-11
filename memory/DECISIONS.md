@@ -74,7 +74,10 @@
 - Facebook Pixel загружается с задержкой 8000мс
 - reCAPTCHA загружается только при взаимодействии с формой (НЕ по таймеру)
 - Hero images на service pages: `loading="eager"` + `fetchpriority="high"`
-- FontAwesome загружается через `media="print"` трик
+- FontAwesome: загружать ТОЛЬКО `solid.min.css` + `fontawesome.min.css` (НЕ `all.min.css`)
+- `combined-city.min.css`: загружается через `preload` + `onload` (non-render-blocking)
+- Critical CSS inline в `<style>` блоке `page.html.twig` — достаточно для above-fold рендера
+- При изменении CSS: менять версию в query string (`?v=YYYYMMDDX`)
 
 ## JavaScript — Осторожно!
 
