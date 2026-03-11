@@ -86,275 +86,168 @@
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://cgc-services.ca/#business",
+      "name": "Clean Gutters Crew",
+      "url": "https://cgc-services.ca/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://cgc-services.ca/#logo",
+        "url": "https://cgc-services.ca/assets/images/logo.png",
+        "width": 200,
+        "height": 80
+      },
+      "image": "https://cgc-services.ca/assets/images/logo.png",
+      "telephone": "+1-672-500-6060",
+      "email": "cgc.services.bc@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7230 202 Street",
+        "addressLocality": "Langley",
+        "addressRegion": "BC",
+        "postalCode": "V2Y 3G4",
+        "addressCountry": "CA"
+      },
+      "openingHoursSpecification": [
         {
-          "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-          "@id": "https://cgc-services.ca/#business",
-          "name": "Clean Gutters Crew",
-          "url": "https://cgc-services.ca/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://cgc-services.ca/assets/images/logo.png"
-          },
-          "image": "https://cgc-services.ca/assets/images/logo.png",
-          "telephone": "+16725006060",
-          "email": "cgc.services.bc@gmail.com",
-          "priceRange": "$$",
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-              "opens": "07:00",
-              "closes": "20:00"
-            }
-          ],
-          "contactPoint": [
-            {
-              "@type": "ContactPoint",
-              "telephone": "+16725006060",
-              "email": "cgc.services.bc@gmail.com",
-              "contactType": "customer service",
-              "availableLanguage": ["en", "ru", "uk"]
-            }
-          ],
-          "areaServed": [
-            { "@type": "City", "name": "Vancouver" },
-            { "@type": "City", "name": "Burnaby" },
-            { "@type": "City", "name": "Surrey" },
-            { "@type": "City", "name": "Richmond" },
-            { "@type": "City", "name": "Coquitlam" },
-            { "@type": "City", "name": "Langley" },
-            { "@type": "City", "name": "Delta" },
-            { "@type": "City", "name": "New Westminster" },
-            { "@type": "City", "name": "North Vancouver" },
-            { "@type": "City", "name": "West Vancouver" },
-            { "@type": "City", "name": "Maple Ridge" },
-            { "@type": "City", "name": "Pitt Meadows" },
-            { "@type": "City", "name": "Port Coquitlam" },
-            { "@type": "City", "name": "Port Moody" },
-            { "@type": "City", "name": "White Rock" },
-            { "@type": "City", "name": "Tsawwassen" },
-            { "@type": "City", "name": "Ladner" }
-          ],
-          "sameAs": [
-            "https://www.instagram.com/cgcservices.ca/",
-            "https://www.facebook.com/profile.php?id=61587613647830"
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "@id": "https://cgc-services.ca/#services-catalog",
-            "name": "Exterior Cleaning Services",
-            "itemListElement": [
-              { "@type": "Offer", "name": "Gutter Cleaning", "url": "https://cgc-services.ca/services/gutter_cleaning", "itemOffered": { "@id": "https://cgc-services.ca/services/gutter_cleaning#service" } },
-              { "@type": "Offer", "name": "Window Washing", "url": "https://cgc-services.ca/services/window_washing", "itemOffered": { "@id": "https://cgc-services.ca/services/window_washing#service" } },
-              { "@type": "Offer", "name": "Pressure Washing", "url": "https://cgc-services.ca/services/pressure_washing", "itemOffered": { "@id": "https://cgc-services.ca/services/pressure_washing#service" } },
-              { "@type": "Offer", "name": "Moss Removal", "url": "https://cgc-services.ca/services/moss_removal", "itemOffered": { "@id": "https://cgc-services.ca/services/moss_removal#service" } },
-              { "@type": "Offer", "name": "Junk Removal", "url": "https://cgc-services.ca/services/junk_removal", "itemOffered": { "@id": "https://cgc-services.ca/services/junk_removal#service" } },
-              { "@type": "Offer", "name": "Handyman Services", "url": "https://cgc-services.ca/services/handyman_services", "itemOffered": { "@id": "https://cgc-services.ca/services/handyman_services#service" } }
-            ]
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://cgc-services.ca/#website",
-          "url": "https://cgc-services.ca/",
-          "name": "Clean Gutters Crew",
-          "publisher": { "@id": "https://cgc-services.ca/#business" },
-          "inLanguage": "en-CA"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://cgc-services.ca/#webpage",
-          "url": "https://cgc-services.ca/",
-          "name": "Gutter Cleaning, Window Washing & Moss Removal in Metro Vancouver | Clean Gutters Crew",
-          "isPartOf": { "@id": "https://cgc-services.ca/#website" },
-          "about": { "@id": "https://cgc-services.ca/#business" },
-          "mainEntity": { "@id": "https://cgc-services.ca/#faq" },
-          "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://cgc-services.ca/assets/images/logo.png"
-          },
-          "description": "Local exterior cleaning in Metro Vancouver: gutter cleaning, window washing, pressure washing, moss removal, junk removal and handyman services. Fast quotes, insured service, pay after the job.",
-          "inLanguage": "en-CA"
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://cgc-services.ca/#faq",
-          "url": "https://cgc-services.ca/#faq",
-          "isPartOf": { "@id": "https://cgc-services.ca/#webpage" },
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How long does gutter cleaning take?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Usually 1–4 hours depending on the home size, number of stories, and how clogged the gutters are. If you share a couple photos, we can estimate more accurately."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do I need to be home during the service?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. As long as we can access the work areas (for example, gates unlocked), you don't have to be home. We clean carefully and leave the area tidy."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How often should gutters be cleaned here?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Most homes need 1–2 times per year (spring and fall). If you have many trees nearby, twice a year is best to prevent overflows during heavy rain."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are you insured?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. We're fully insured. If you need confirmation for peace of mind, we can provide details when you request your quote."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How much does gutter cleaning cost?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Single-story homes often start around $180–250. Price depends on roof size, number of stories, access, and any add-ons. We confirm the total price before we begin."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is included in a standard gutter cleaning visit?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A standard gutter cleaning visit usually includes debris removal from gutters, basic downspout flow check, cleanup of the work area, and photo proof on request. We confirm the scope before we start."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do clogged gutters cause roof leaks?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, clogged gutters can eventually lead to roof leaks. When gutters are blocked with leaves, moss, and debris, rainwater cannot flow away properly. Water begins to overflow and can get under shingles or behind the fascia. Over time this moisture may damage the roof structure, siding, and even the foundation of the home. Regular gutter cleaning helps prevent these problems and keeps water draining safely away from your house."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you work in rain or winter?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We avoid heavy rain or snow for safety and to prevent mess. In winter, we usually work on dry days and above-freezing temperatures."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you clean windows inside and outside?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. We can do exterior-only or both interior and exterior. We can also include sliding doors and sills if agreed in advance."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is roof moss removal safe for my roof?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. We use safe methods and avoid harsh approaches that damage shingles. When possible, we minimize roof foot traffic."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you provide before/after photos?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, on request. Many homeowners love photo proof, especially for gutters and roof work, so you can clearly see the result."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do bookings and payments work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Request a quote or call us. We confirm the price and schedule. Payment is after the job (cash, e-Transfer, or card). No deposit required."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What areas do we serve?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We serve Vancouver, Burnaby, Surrey, Richmond, Coquitlam, Langley, Delta, New Westminster, North Vancouver, West Vancouver, Maple Ridge, Pitt Meadows, Port Coquitlam, Port Moody, White Rock, Tsawwassen and Ladner."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Why do Metro Vancouver homes need regular exterior cleaning?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Frequent rain, tree debris, and moss growth can quickly lead to blocked gutters, slippery surfaces, stained siding, and roof wear. Routine cleaning helps protect the home and reduce repair risk."
-              }
-            }
-          ]
-        },
-        {
-          "@type": "Service",
-          "@id": "https://cgc-services.ca/services/gutter_cleaning#service",
-          "name": "Gutter Cleaning",
-          "serviceType": "Gutter Cleaning",
-          "url": "https://cgc-services.ca/services/gutter_cleaning",
-          "provider": { "@id": "https://cgc-services.ca/#business" },
-          "description": "Professional gutter cleaning for homes in Metro Vancouver to help prevent overflow, leaks, and water damage."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://cgc-services.ca/services/window_washing#service",
-          "name": "Window Washing",
-          "serviceType": "Window Washing",
-          "url": "https://cgc-services.ca/services/window_washing",
-          "provider": { "@id": "https://cgc-services.ca/#business" },
-          "description": "Residential window washing services in Metro Vancouver for cleaner glass and improved curb appeal."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://cgc-services.ca/services/pressure_washing#service",
-          "name": "Pressure Washing",
-          "serviceType": "Pressure Washing",
-          "url": "https://cgc-services.ca/services/pressure_washing",
-          "provider": { "@id": "https://cgc-services.ca/#business" },
-          "description": "Pressure washing for driveways, patios, decks, siding, and other exterior surfaces in Metro Vancouver."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://cgc-services.ca/services/moss_removal#service",
-          "name": "Moss Removal",
-          "serviceType": "Moss Removal",
-          "url": "https://cgc-services.ca/services/moss_removal",
-          "provider": { "@id": "https://cgc-services.ca/#business" },
-          "description": "Roof moss removal services in Metro Vancouver using careful methods designed to reduce roof damage and help limit regrowth."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://cgc-services.ca/services/junk_removal#service",
-          "name": "Junk Removal",
-          "serviceType": "Junk Removal",
-          "url": "https://cgc-services.ca/services/junk_removal",
-          "provider": { "@id": "https://cgc-services.ca/#business" },
-          "description": "Junk removal services in Metro Vancouver for yard waste, household items, branches, and other unwanted exterior debris."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://cgc-services.ca/services/handyman_services#service",
-          "name": "Handyman Services",
-          "serviceType": "Handyman Services",
-          "url": "https://cgc-services.ca/services/handyman_services",
-          "provider": { "@id": "https://cgc-services.ca/#business" },
-          "description": "Small exterior handyman services in Metro Vancouver, including minor repairs, maintenance, and related outdoor service work."
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "07:00",
+          "closes": "20:00"
         }
-      ]
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-672-500-6060",
+          "email": "cgc.services.bc@gmail.com",
+          "contactType": "customer service",
+          "availableLanguage": ["en", "ru", "uk"]
+        }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Vancouver"},
+        {"@type": "City", "name": "Burnaby"},
+        {"@type": "City", "name": "Surrey"},
+        {"@type": "City", "name": "Richmond"},
+        {"@type": "City", "name": "Coquitlam"},
+        {"@type": "City", "name": "Langley"},
+        {"@type": "City", "name": "Delta"},
+        {"@type": "City", "name": "New Westminster"},
+        {"@type": "City", "name": "North Vancouver"},
+        {"@type": "City", "name": "West Vancouver"},
+        {"@type": "City", "name": "Maple Ridge"},
+        {"@type": "City", "name": "Pitt Meadows"},
+        {"@type": "City", "name": "Port Coquitlam"},
+        {"@type": "City", "name": "Port Moody"},
+        {"@type": "City", "name": "White Rock"},
+        {"@type": "City", "name": "Tsawwassen"},
+        {"@type": "City", "name": "Ladner"}
+      ],
+      "sameAs": [
+        "https://www.instagram.com/cgcservices.ca/",
+        "https://www.facebook.com/profile.php?id=61587613647830"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://cgc-services.ca/#services",
+        "name": "Exterior Cleaning Services",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Gutter Cleaning", "url": "https://cgc-services.ca/services/gutter_cleaning", "itemOffered": {"@id": "https://cgc-services.ca/services/gutter_cleaning#service"}},
+          {"@type": "Offer", "name": "Window Washing", "url": "https://cgc-services.ca/services/window_washing", "itemOffered": {"@id": "https://cgc-services.ca/services/window_washing#service"}},
+          {"@type": "Offer", "name": "Pressure Washing", "url": "https://cgc-services.ca/services/pressure_washing", "itemOffered": {"@id": "https://cgc-services.ca/services/pressure_washing#service"}},
+          {"@type": "Offer", "name": "Moss Removal", "url": "https://cgc-services.ca/services/moss_removal", "itemOffered": {"@id": "https://cgc-services.ca/services/moss_removal#service"}},
+          {"@type": "Offer", "name": "Junk Removal", "url": "https://cgc-services.ca/services/junk_removal", "itemOffered": {"@id": "https://cgc-services.ca/services/junk_removal#service"}},
+          {"@type": "Offer", "name": "Handyman Services", "url": "https://cgc-services.ca/services/handyman_services", "itemOffered": {"@id": "https://cgc-services.ca/services/handyman_services#service"}}
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cgc-services.ca/#website",
+      "url": "https://cgc-services.ca/",
+      "name": "Clean Gutters Crew",
+      "publisher": {"@id": "https://cgc-services.ca/#business"},
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/#webpage",
+      "url": "https://cgc-services.ca/",
+      "name": "Gutter Cleaning, Window Washing & Moss Removal in Metro Vancouver | Clean Gutters Crew",
+      "isPartOf": {"@id": "https://cgc-services.ca/#website"},
+      "about": {"@id": "https://cgc-services.ca/#business"},
+      "primaryImageOfPage": {"@id": "https://cgc-services.ca/#logo"},
+      "description": "Local exterior cleaning in Metro Vancouver including gutter cleaning, window washing, pressure washing, moss removal, junk removal and handyman services.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/services/gutter_cleaning#service",
+      "name": "Gutter Cleaning",
+      "serviceType": "Gutter Cleaning",
+      "url": "https://cgc-services.ca/services/gutter_cleaning",
+      "provider": {"@id": "https://cgc-services.ca/#business"},
+      "areaServed": {"@type": "AdministrativeArea", "name": "Metro Vancouver"},
+      "description": "Professional gutter cleaning for homes in Metro Vancouver to help prevent overflow, leaks, and water damage."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/services/window_washing#service",
+      "name": "Window Washing",
+      "serviceType": "Window Washing",
+      "url": "https://cgc-services.ca/services/window_washing",
+      "provider": {"@id": "https://cgc-services.ca/#business"},
+      "areaServed": {"@type": "AdministrativeArea", "name": "Metro Vancouver"},
+      "description": "Residential window washing services in Metro Vancouver."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/services/pressure_washing#service",
+      "name": "Pressure Washing",
+      "serviceType": "Pressure Washing",
+      "url": "https://cgc-services.ca/services/pressure_washing",
+      "provider": {"@id": "https://cgc-services.ca/#business"},
+      "areaServed": {"@type": "AdministrativeArea", "name": "Metro Vancouver"},
+      "description": "Pressure washing for driveways, patios, decks and siding."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/services/moss_removal#service",
+      "name": "Moss Removal",
+      "serviceType": "Moss Removal",
+      "url": "https://cgc-services.ca/services/moss_removal",
+      "provider": {"@id": "https://cgc-services.ca/#business"},
+      "areaServed": {"@type": "AdministrativeArea", "name": "Metro Vancouver"},
+      "description": "Roof moss removal services using safe cleaning methods."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/services/junk_removal#service",
+      "name": "Junk Removal",
+      "serviceType": "Junk Removal",
+      "url": "https://cgc-services.ca/services/junk_removal",
+      "provider": {"@id": "https://cgc-services.ca/#business"},
+      "areaServed": {"@type": "AdministrativeArea", "name": "Metro Vancouver"},
+      "description": "Junk removal services for yard waste, furniture and debris."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/services/handyman_services#service",
+      "name": "Handyman Services",
+      "serviceType": "Handyman Services",
+      "url": "https://cgc-services.ca/services/handyman_services",
+      "provider": {"@id": "https://cgc-services.ca/#business"},
+      "areaServed": {"@type": "AdministrativeArea", "name": "Metro Vancouver"},
+      "description": "Small exterior handyman services and minor repairs."
     }
+  ]
+}
     </script>
 
     {% block styles %}
